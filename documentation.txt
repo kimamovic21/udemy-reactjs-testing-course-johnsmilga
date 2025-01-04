@@ -9,3 +9,10 @@ Section 01: Introduction
 Section 02: React Testing Library Tutorial
 
 02. Main Course Repo !!! Important !!!
+
+03. Install/Setup Course Repository
+-otvorimo web stranicu: https://vite.dev/guide/
+-preuzmemo folder 01-rtl-tutorial sa startnim folderima i fajlovima
+-u terminalu udemo u folder cd 01-rtl-tutorial i ukucamo komandu npm i
+-u jednom terminalu ukucamo komandu npm run dev
+-u drugom terminalu ukucamo komandu npm test
