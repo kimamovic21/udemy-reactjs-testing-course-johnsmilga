@@ -1,0 +1,36 @@
+Quiz 1: React Testing Library Essentials Quiz
+
+
+Question 1: 
+What is the purpose of the test function in React Testing Library?
+
+Correct answer: 
+To define a single test cast with a description and test logic
+
+
+Question 2: 
+Which file is typically used to pre-configure Vitest in the provided course setup?
+
+Correct answer: 
+vitest.setup.ts
+
+
+Question 3:
+What is the primary role of render() in React Testing Library?
+
+Correct answer: 
+To mount a React component in a simulated browser environment
+
+
+Question 4:
+What does screen.getByText('React Testing Library') do?
+
+Correct answer: 
+Searches for DOM for an element with the specified text
+
+
+Question 5:
+What will happen if a test contains no assertions?
+
+Correct answer: 
+The test will pass automatically

@@ -26,3 +26,5 @@ Section 02: React Testing Library Tutorial
 
 07. Vitest Info
 -otvorimo web stranicu: https://vitest.dev
+
+Quiz 1: React Testing Library Essentials Quiz
