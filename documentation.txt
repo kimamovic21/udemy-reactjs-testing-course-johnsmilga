@@ -23,3 +23,6 @@ Section 02: React Testing Library Tutorial
 -otvorimo App.test.tsx komponentu
 
 06. Test Validation Details
+
+07. Vitest Info
+-otvorimo web stranicu: https://vitest.dev

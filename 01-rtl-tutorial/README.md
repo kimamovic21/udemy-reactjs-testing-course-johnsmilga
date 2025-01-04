@@ -220,8 +220,9 @@ describe('App Component', () => {
 
 ## Running Tests with Vitest
 
-Vitest automatically finds and runs any files that have .test or .spec in their name, or files inside `__tests__` folders. To run all tests, just type `npm test`. If you just want to run one test file, press `h` in the terminal to see all the commands. and `p` to select the file you want to run.
-With that said `vitest` is really smart and add runs only the tests that have changed.
+Vitest automatically finds and runs any files that have .test or .spec in their name, or files inside `__tests__` folders. 
+To run all tests, just type `npm test`. If you just want to run one test file, press `h` in the terminal to see all the commands 
+and `p` to select the file you want to run. With that said `vitest` is really smart and add runs only the tests that have changed.
 
 ## Vitest vs React Testing Library
 
@@ -241,7 +242,15 @@ describe('basic arithmetic checks', () => {
 });
 ```
 
-Vitest and React Testing Library (RTL) serve different but complementary purposes in testing React applications. Vitest is a test runner that provides the basic structure (describe, test) and assertions (expect) needed to execute tests. While similar to Jest, Vitest offers better performance and seamless Vite integration. When testing React components (as shown in the App.test.tsx example above), you need React Testing Library alongside Vitest. RTL provides the essential tools to render components, query the DOM, and simulate user interactions, while Vitest handles running the tests and managing assertions. You can think of Vitest as the engine that runs your tests, while RTL is the specialized toolkit for testing React components from a user's perspective. This allows you to write comprehensive tests that verify both component behavior and user interactions.
+- Vitest and React Testing Library (RTL) serve different but complementary purposes in testing React applications. 
+- Vitest is a test runner that provides the basic structure (describe, test) and assertions (expect) needed to execute tests. 
+- While similar to Jest, Vitest offers better performance and seamless Vite integration. 
+- When testing React components (as shown in the App.test.tsx example above), you need React Testing Library alongside Vitest. 
+- RTL provides the essential tools to render components, query the DOM, and simulate user interactions, while Vitest handles running 
+the tests and managing assertions. 
+- You can think of Vitest as the engine that runs your tests, while RTL is the specialized toolkit for testing React components 
+from a user's perspective.
+- This allows you to write comprehensive tests that verify both component behavior and user interactions.
 
 ## Tutorial
 
@@ -266,7 +275,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
-    // Note: The following configuration block shows how to exclude specific directories from Vitest testing. Pay special attention to the exclude array which prevents test running in directories like node_modules, dist, cypress, and most importantly the final folder containing solutions.
+    // Note: The following configuration block shows how to exclude specific directories from Vitest testing. 
+    // Pay special attention to the exclude array which prevents test running in directories like node_modules, dist, 
+    // cypress and most importantly the final folder containing solutions.
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
