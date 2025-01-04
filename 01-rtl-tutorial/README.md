@@ -1,13 +1,22 @@
 ## RTL Tutorial
 
-Alright, now that we have discussed the main concepts and libraries we are going to use in this course, let's start our testing journey with the React Testing Library tutorial, where we will learn the core concepts of React Testing Library as well as testing in general.
+Alright, now that we have discussed the main concepts and libraries we are going to use in this course, let's start our 
+testing journey with the React Testing Library tutorial, where we will learn the core concepts of React Testing Library as 
+well as testing in general.
 
-Since adding React Testing Library to an existing Vite project requires quite a few steps, and based on my experience, students get bored with such setup at the beginning of the course, I have prepared a project with pre-configured Vite, Vitest, and React Testing Library. This way, we don't need to waste any time and can dive right into the fun part - writing our first tests. With that said, to all the setup junkies - don't worry, we will cover the entire setup process in the next course section.
+Since adding React Testing Library to an existing Vite project requires quite a few steps, and based on my experience, 
+students get bored with such setup at the beginning of the course, I have prepared a project with pre-configured Vite, 
+Vitest, and React Testing Library. This way, we don't need to waste any time and can dive right into the fun part - writing 
+our first tests. With that said, to all the setup junkies - don't worry, we will cover the entire setup process in the next 
+course section.
 
 ## Setup
 
-In order to follow along with the course content, you will need to get a hold of the course repository located at this [URL](https://github.com/john-smilga/react-testing-course).I also shared the link in the previous lecture, so
-Once you have cloned the repository, open the 01-rtl-tutorial folder in your favorite IDE (in my case VSCode), install the dependencies by running `npm install`, run `npm run dev` to start the project in development mode, and also open another terminal instance and run `npm run test` to start the tests.If everything is set up correctly, you should see the following output in the terminal:
+In order to follow along with the course content, you will need to get a hold of the course repository located at this link: 
+[URL](https://github.com/john-smilga/react-testing-course). I also shared the link in the previous lecture, so once you have 
+cloned the repository, open the 01-rtl-tutorial folder in your favorite IDE (in my case VSCode), install the dependencies by 
+running `npm install`, run `npm run dev` to start the project in development mode, and also open another terminal instance and 
+run `npm run test` to start the tests. If everything is set up correctly, you should see the following output in the terminal:
 
 ## Files and Folders
 
@@ -24,13 +33,16 @@ This is a boilerplate Vite project, with Typescript, TailwindCSS, and all of the
   `npm run dev` - script to start the development server
   `npm run test` - script to start the test runner
 
-For the most part we will focus on tests and only navigate to the actual browser from time to time, so dev server can be stopped at any time unlike the test runner which will constantly run in the background to watch for changes and re-run the tests.
+For the most part we will focus on tests and only navigate to the actual browser from time to time, so dev server can be stopped 
+at any time unlike the test runner which will constantly run in the background to watch for changes and re-run the tests.
 
-Also in the root you will find README.md file with the course outline, more detailed explanations of the course content,links to additional resources, code examples which you can use as a reference, and other helpful information. So make sure to check it out.
+Also in the root you will find README.md file with the course outline, more detailed explanations of the course content,links to 
+additional resources, code examples which you can use as a reference, and other helpful information. So make sure to check it out.
 
 ## Explore our First Test
 
-First take a look at the `src/App.tsx` file and notice the heading with the text "React Testing Library". This is the component we will be testing.
+First take a look at the `src/App.tsx` file and notice the heading with the text "React Testing Library". This is the component we 
+will be testing.
 
 src/App.tsx
 
@@ -45,7 +57,8 @@ function App() {
       </p>
     </div>
   );
-}
+};
+
 export default App;
 ```
 
@@ -64,10 +77,11 @@ import App from '../App';
 
 test('should render heading with correct text', () => {
   // Render the App component
-  //mounts your React component into a simulated browser environment.
+  // mounts your React component into a simulated browser environment.
   render(<App />);
 
-  // `screen.debug()` is a function that logs the current state of the virtual DOM to the console. It helps you visualize the component's structure and see what's being rendered.
+  // `screen.debug()` is a function that logs the current state of the virtual DOM to the console. It helps you visualize the 
+  // component's structure and see what's being rendered.
 
   screen.debug();
 
@@ -87,24 +101,34 @@ test('should render heading with correct text', () => {
 
 ## Explanation
 
-The `test` function is a fundamental testing function that defines a single test case. It takes two arguments: a string description of what the test should do, and a callback function containing the actual test code. When you run your tests, each `test` block runs as a separate test, and the description helps identify which test passed or failed. For example, `test('should render heading', () => { ... })` creates a test that verifies if a heading renders correctly. Note that `test` and `it` are aliases - they do exactly the same thing and can be used interchangeably.
+The `test` function is a fundamental testing function that defines a single test case. It takes two arguments: a string description of 
+what the test should do, and a callback function containing the actual test code. When you run your tests, each `test` block runs as a 
+separate test, and the description helps identify which test passed or failed. For example, `test('should render heading', () => { ... })` 
+creates a test that verifies if a heading renders correctly. Note that `test` and `it` are aliases - they do exactly the same thing and 
+can be used interchangeably.
 
-`render()` is a function provided by `@testing-library/react` that mounts your React component into a JSDOM environment (a simulated browser environment). JSDOM creates the virtual DOM, and the render function sets up the component within this environment so you can test it. Think of it as "painting" your component onto a simulated webpage for testing purposes.
+`render()` is a function provided by `@testing-library/react` that mounts your React component into a JSDOM environment (a simulated 
+browser environment). JSDOM creates the virtual DOM, and the render function sets up the component within this environment so you can 
+test it. Think of it as "painting" your component onto a simulated webpage for testing purposes.
 
-`screen.debug()` is a function that logs the current state of the virtual DOM to the console. It helps you visualize the component's structure and see what's being rendered.
+`screen.debug()` is a function that logs the current state of the virtual DOM to the console. It helps you visualize the component's 
+structure and see what's being rendered.
 
 `screen` is an object provided by `@testing-library/react` that contains methods for querying and interacting with the virtual DOM.
 
-`screen.getByText('Random Component')` is a function that searches for an element with the text "Random Component" in the virtual DOM. It returns the first element that matches the text.
+`screen.getByText('Random Component')` is a function that searches for an element with the text "Random Component" in the virtual DOM. 
+It returns the first element that matches the text.
 
-`expect()` is a function that wraps an actual value you want to test. It creates an "expectation" object that lets you check different things about that value using matchers. Think of it as starting a sentence like "I expect this value to..."`
+`expect()` is a function that wraps an actual value you want to test. It creates an "expectation" object that lets you check different 
+things about that value using matchers. Think of it as starting a sentence like "I expect this value to..."`
 
 ```tsx
 expect(actualValue).matcher(expectedValue);
 ```
 
 `toBeInTheDocument()` is a matcher that checks if the element is present in the virtual DOM.
-Matchers are methods that let you test values in different ways. They complete the "expectation sentence" by specifying exactly what you're checking for. We will learn more matchers as we go.
+Matchers are methods that let you test values in different ways. They complete the "expectation sentence" by specifying exactly what 
+you're checking for. We will learn more matchers as we go.
 
 ## Shorter Syntax
 
