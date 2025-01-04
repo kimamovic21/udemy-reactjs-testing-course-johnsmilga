@@ -4,3 +4,8 @@ Udemy Course Mastering React Testing: RTL, Vitest & MSW - John Smilga
 Section 01: Introduction
 
 01. Course Info
+
+
+Section 02: React Testing Library Tutorial
+
+02. Main Course Repo !!! Important !!!
