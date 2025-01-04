@@ -21,3 +21,5 @@ Section 02: React Testing Library Tutorial
 
 05. Explore First Test File
 -otvorimo App.test.tsx komponentu
+
+06. Test Validation Details

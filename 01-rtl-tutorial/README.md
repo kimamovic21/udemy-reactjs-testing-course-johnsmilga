@@ -153,11 +153,17 @@ test('should render heading with correct text', () => {
 
 ## Understanding Test Validation
 
-Think of tests like checking boxes on a list. An empty test (with no checks) automatically passes - it's like saying "yes" without asking any questions. The same applies to a test that has no assertions. When you add assertions, you're declaring what you expect to be true - it's like saying "I expect this specific condition to be true, please verify it". If reality doesn't match your expectation, the test will fail.
+Think of tests like checking boxes on a list. An empty test (with no checks) automatically passes - it's like saying "yes" without 
+asking any questions. The same applies to a test that has no assertions. When you add assertions, you're declaring what you expect 
+to be true - it's like saying "I expect this specific condition to be true, please verify it". If reality doesn't match your expectation, 
+the test will fail.
 
-For example, if you tell the test "1 + 1 should equal 3", it will fail because that's mathematically incorrect. Similarly, when we change the text in `getByText('React Testing Library')` to `getByText('Angular Testing Library')`, the test will fail because there is no element with that text in the component.
+For example, if you tell the test "1 + 1 should equal 3", it will fail because that's mathematically incorrect. Similarly, when we 
+change the text in `getByText('React Testing Library')` to `getByText('Angular Testing Library')`, the test will fail because there 
+is no element with that text in the component.
 
-You can also force a test to fail by throwing an error - this is like raising a red flag to say "stop, something's wrong here!". This is particularly useful when you want to explicitly mark a test as failed under certain conditions.
+You can also force a test to fail by throwing an error - this is like raising a red flag to say "stop, something's wrong here!". 
+This is particularly useful when you want to explicitly mark a test as failed under certain conditions.
 
 ```tsx
 test('this empty test will pass', () => {
@@ -186,7 +192,11 @@ test('this test will fail because we throw an error', () => {
 
 ## Test Suite Organization with `describe`
 
-The `describe` function is used to group related test cases into a test suite. It takes a descriptive string and a callback function containing the test cases. This organization helps maintain clear test structure and improves test readability. The first argument should be a descriptive string that clearly identifies what you're testing (like a component name or functionality), and the second argument is a callback function that contains your test cases. Below is an example of how to use `describe` to group related tests:
+The `describe` function is used to group related test cases into a test suite. It takes a descriptive string and a callback 
+function containing the test cases. This organization helps maintain clear test structure and improves test readability. 
+The first argument should be a descriptive string that clearly identifies what you're testing (like a component name or 
+functionality), and the second argument is a callback function that contains your test cases. Below is an example of how 
+to use `describe` to group related tests:
 
 ```tsx
 import { render, screen } from '@testing-library/react';
