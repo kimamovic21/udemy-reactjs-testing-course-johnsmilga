@@ -431,7 +431,12 @@ describe('01-search-by-text', () => {
 
 Let's quickly cover what is TDD or Test Driven Development and work on a simple example.
 
-TDD (Test-Driven Development) is a programming approach where you write tests before writing the actual code. First, you write a failing test that describes what you want your code to do. Then, you write just enough code to make that test pass. Finally, you improve your code while keeping the tests passing. This cycle is known as "red-green-refactor" - red because the test fails initially (showing in red), and green because the test passes after writing the code (showing in green).
+- TDD (Test-Driven Development) is a programming approach where you write tests before writing the actual code. 
+- First, you write a failing test that describes what you want your code to do. 
+- Then, you write just enough code to make that test pass. 
+- Finally, you improve your code while keeping the tests passing. 
+- This cycle is known as "red-green-refactor" - red because the test fails initially (showing in red) and green because 
+the test passes after writing the code (showing in green).
 
 Key benefits of TDD include:
 
@@ -466,7 +471,7 @@ describe('02-tdd-example', () => {
 ```tsx
 function Sandbox() {
   return <div>Sandbox</div>;
-}
+};
 export default Sandbox;
 ```
 
@@ -478,10 +483,11 @@ export default Sandbox;
 function Sandbox() {
   return (
     <div>
-      <h1>React Testing Library Examples</h1>
+      <h2>React Testing Library Examples</h2>
     </div>
   );
-}
+};
+
 export default Sandbox;
 ```
 

@@ -57,3 +57,16 @@ Quiz 1: React Testing Library Essentials Quiz
 -pozivamo funkciju expect(items).toHaveLength(3)
 -kreiramo varijablu const asyncMessage
 -pozivamo funkciju expect(asyncMessage).toBeInTheDocument()
+
+11. Test Driven Development Example
+-u folderu tutorial/02-tdd-example kreiramo komponentu Sandbox.test.tsx
+-u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo komponentu Sandbox.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render()
+-kreiramo varijablu const heading
+-pozivamo funkciju expect(heading).toBeInTheDocument()
+-u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/02-tdd-example
