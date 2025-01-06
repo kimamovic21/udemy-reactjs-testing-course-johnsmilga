@@ -519,8 +519,8 @@ const Sandbox = () => {
       </nav>
 
       {/* Headings */}
-      <h1>Main Heading</h1>
-      <h2>Subheading</h2>
+      <h2>Main Heading</h2>
+      <h3>Subheading</h3>
 
       <img src='example.jpg' alt='Example' />
 

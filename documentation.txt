@@ -29,7 +29,7 @@ Section 02: React Testing Library Tutorial
 
 Quiz 1: React Testing Library Essentials Quiz
 
-08. <SearchByText> - Component
+08. <SearchByText /> - Component
 -kreiramo folder starter sa tsx komponentama
 -u eslint.config.js fajl dodajemo opciju: '@typescript-eslint/no-unused-vars': 'warn'
 -u komponentu Sandbox.tsx importujemo funkcije useState i useEffect iz biblioteke React
@@ -72,3 +72,7 @@ Quiz 1: React Testing Library Essentials Quiz
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/02-tdd-example
 
 Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
+
+12. <SearchByRole /> Component
+-u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/03-search-by-role
+-u komponentu Sandbox.tsx importujemo funkcije useState i useEffect iz biblioteke React
