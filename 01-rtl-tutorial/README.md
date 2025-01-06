@@ -732,28 +732,40 @@ describe('03-search-by-role', () => {
 
 ## User Interactions
 
-Alright, once we know how to query elements, we can start learning how to test user interactions - things like clicking, typing, selecting options, etc. We will start slowly with simple button clicks, and in the following chapter we will build a more complex example where we will test interactions like typing into input fields and other cool features. During this chapter I will introduce you to both options we have for user interactions: `userEvent` and `fireEvent` but in general `userEvent` is the best option.You can read more about the difference between `userEvent` and `fireEvent` below or utilize [this url](https://testing-library.com/docs/user-event/intro/#differences-with-fireevent)
+- Alright, once we know how to query elements, we can start learning how to test user interactions - things like clicking, 
+  typing, selecting options, etc. 
+- We will start slowly with simple button clicks, and in the following chapter we will build a more complex example where we 
+  will test interactions like typing into input fields and other cool features. 
+- During this chapter I will introduce you to both options we have for user interactions: `userEvent` and `fireEvent` but in 
+  general `userEvent` is the best option.
+- You can read more about the difference between `userEvent` and `fireEvent` below or utilize:
+  [this url](https://testing-library.com/docs/user-event/intro/#differences-with-fireevent)
 
 ### Why `userEvent` is Better Than `fireEvent`
 
 While both `userEvent` and `fireEvent` can simulate user interactions in tests, `userEvent` is the better choice for a few key reasons:
 
-1. **More Realistic**: `userEvent` simulates how real users interact with your app. For example, when a user types, they first click the input, then press keys one by one. `userEvent` follows this same pattern, while `fireEvent` just changes the value directly.
+1. **More Realistic**: `userEvent` simulates how real users interact with your app. For example, when a user types, they first click the input, 
+   then press keys one by one. `userEvent` follows this same pattern, while `fireEvent` just changes the value directly.
 
-2. **Catches More Issues**: Because `userEvent` is more realistic, it can find bugs that `fireEvent` might miss. For instance, `userEvent` will fail if a button is covered by another element, just like a real user couldn't click it.
+2. **Catches More Issues**: Because `userEvent` is more realistic, it can find bugs that `fireEvent` might miss. For instance, `userEvent` will 
+   fail if a button is covered by another element, just like a real user couldn't click it.
 
-3. **Simpler to Use**: `userEvent` has clearer method names that match what users actually do, like `click()`, `type()`, and `selectOptions()`. This makes tests easier to read and write.
+3. **Simpler to Use**: `userEvent` has clearer method names that match what users actually do, like `click()`, `type()`, and `selectOptions()`. 
+   This makes tests easier to read and write.
 
-4. **More Complete**: `userEvent` handles many small details automatically. When you click with `userEvent`, it triggers focus events, mouse events, and more - just like a real browser would.
+4. **More Complete**: `userEvent` handles many small details automatically. When you click with `userEvent`, it triggers focus events, mouse events
+   and more - just like a real browser would.
 
-It's worth noting that `userEvent` is actually built on top of `fireEvent`. While `userEvent` covers most testing needs, there are some special cases where we still need to use `fireEvent` directly (like testing some specific browser events). But for most day-to-day testing, `userEvent` is the way to go.
+- It's worth noting that `userEvent` is actually built on top of `fireEvent`. While `userEvent` covers most testing needs, there are some special 
+cases where we still need to use `fireEvent` directly (like testing some specific browser events). 
+- But for most day-to-day testing, `userEvent` is the way to go.
 
 src/tutorial/04-user-interactions/Sandbox.tsx
 
 ```tsx
 import { useState } from 'react';
-import { FaHeart } from 'react-icons/fa';
-import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 const Sandbox = () => {
   const [count, setCount] = useState(0);

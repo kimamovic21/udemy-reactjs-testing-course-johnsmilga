@@ -116,3 +116,9 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 -pozivamo funkciju expect(screen.queryByRole('button', { ... }))
 -kreiramo varijablu const asyncButton
 -pozivamo funkciju expect(asyncButton).toBeInTheDocument()
+
+15. User Interactions Component
+-otvorimo link: https://testing-library.com/docs/user-event/intro/#differences-with-fireevent
+-u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/04-user-interactions
+-u komponentu 04-user-interaction/Sandbox.tsx importujemo funkciju useState iz biblioteke React
+-importujemo ikonice FaHeart i FaRegHeart iz paketa React Icons
