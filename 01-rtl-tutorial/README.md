@@ -898,9 +898,7 @@ describe('04-user-interactions', () => {
     // Initially shows unlike button (outline heart)
     const unlikeButton = screen.getByRole('button', { name: 'unlike button' });
     expect(unlikeButton).toBeInTheDocument();
-    expect(
-      screen.queryByRole('button', { name: 'like button' })
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'like button' })).not.toBeInTheDocument();
 
     // Click unlike button
     await user.click(unlikeButton);
@@ -908,9 +906,7 @@ describe('04-user-interactions', () => {
     // Should now show like button (filled heart)
     const likeButton = screen.getByRole('button', { name: 'like button' });
     expect(likeButton).toBeInTheDocument();
-    expect(
-      screen.queryByRole('button', { name: 'unlike button' })
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'unlike button' })).not.toBeInTheDocument();
   });
 });
 ```
@@ -950,7 +946,8 @@ describe('04-user-interactions', () => {
 }
 ```
 
-While the second approach is more concise, the benefits of clarity, accessibility, and maintainability in the first approach generally outweigh the benefit of having less code.
+While the second approach is more concise, the benefits of clarity, accessibility, and maintainability in the first approach 
+generally outweigh the benefit of having less code.
 
 1. **Explicit Button States**
 
@@ -976,7 +973,8 @@ While the second approach is more concise, the benefits of clarity, accessibilit
    - You won't need to add additional ternary operators or complex conditional logic
    - Each state can be modified independently without affecting the other
 
-While the second approach is more concise, the benefits of clarity, accessibility, and maintainability in the first approach generally outweigh the benefit of having less code.
+While the second approach is more concise, the benefits of clarity, accessibility, and maintainability in the first approach 
+generally outweigh the benefit of having less code.
 
 ## Form Testing
 

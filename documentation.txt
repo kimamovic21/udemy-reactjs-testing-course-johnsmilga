@@ -11,6 +11,7 @@ Section 02: React Testing Library Tutorial
 02. Main Course Repo !!! Important !!!
 
 03. Install/Setup Course Repository
+-otvorimo link: https://www.npmjs.com/package/@testing-library/react
 -otvorimo web stranicu: https://vite.dev/guide/
 -preuzmemo folder 01-rtl-tutorial sa startnim folderima i fajlovima
 -u terminalu udemo u folder cd 01-rtl-tutorial i ukucamo komandu npm i
@@ -122,3 +123,13 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/04-user-interactions
 -u komponentu 04-user-interaction/Sandbox.tsx importujemo funkciju useState iz biblioteke React
 -importujemo ikonice FaHeart i FaRegHeart iz paketa React Icons
+
+16. User Interactions - Test File
+-otvorimo link: https://www.npmjs.com/package/@testing-library/user-event
+-u folderu tutorial/04-user-interactions kreiramo komponentu Sandbox.test.tsx
+-u komponentu Sandbox.test.tsx importujemo funkcije render, screen i fireEvent iz paketa testing-library/react
+-importujemo funkciju userEvent() iz paketa testing-library/user-event
+-pozivamo funkciju describe() sa dva argumenta
+-prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u komponenti Sandbox.tsx button elementima dodajemo atribut aria-label
+-u funkciji describe() pozivamo cetiri funkcije test()
