@@ -23,6 +23,8 @@ const Sandbox = () => {
         <li>Item 1</li>
         <li>Item 1</li>
       </ul>
+
+      {showMessage && <p>Async message</p>}
     </div>
   );
 };

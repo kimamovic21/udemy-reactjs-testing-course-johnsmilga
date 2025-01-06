@@ -34,3 +34,5 @@ Quiz 1: React Testing Library Essentials Quiz
 -u eslint.config.js fajl dodajemo opciju: '@typescript-eslint/no-unused-vars': 'warn'
 -u komponentu Sandbox.tsx importujemo funkcije useState i useEffect iz biblioteke React
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx
+
+09. SearchByText Methods - Overview
