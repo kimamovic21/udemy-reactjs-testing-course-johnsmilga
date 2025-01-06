@@ -36,3 +36,24 @@ Quiz 1: React Testing Library Essentials Quiz
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx
 
 09. SearchByText Methods - Overview
+
+10. SearchByText Methods - Test File
+-u folderu tutorial/01-search-by-text kreiramo komponentu Sandbox.test.tsx
+-u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo komponentu Sandbox.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-prvi argument funkcije describe() je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-prvi argument funkcije test() je opis testa, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkcije render(<Sandbox />) i screen.debug()
+-kreiramo varijablu const heading
+-pozivamo funkciju expect(heading).toBeInTheDocument()
+-pozivamo funkciju expect(screen.getByText(/react/i)).toBeInTheDocument()
+-kreiramo varijable const phoneRegex i const phoneText
+-pozivamo funkciju expect(phoneText).toBeInTheDocument()
+-kreiramo varijablu const errorMessage 
+-pozivamo funkciju expect(errorMessage).not.toBeInTheDocument()
+-kreiramo varijablu const items
+-pozivamo funkciju expect(items).toHaveLength(3)
+-kreiramo varijablu const asyncMessage
+-pozivamo funkciju expect(asyncMessage).toBeInTheDocument()

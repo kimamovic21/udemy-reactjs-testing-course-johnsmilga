@@ -401,10 +401,12 @@ describe('01-search-by-text', () => {
   test('demonstrates different query methods', async () => {
     render(<Sandbox />);
     screen.debug();
+
     // 1. getByText - exact string match
     const heading = screen.getByText('React Testing Library Examples');
     expect(heading).toBeInTheDocument();
     expect(screen.getByText(/react/i)).toBeInTheDocument();
+
     // 2. getByText with regex - phone number
     const phoneRegex = /\d{3}-\d{3}-\d{4}/;
     const phoneText = screen.getByText(phoneRegex);
