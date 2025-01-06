@@ -332,7 +332,8 @@ export default Sandbox;
 
 React Testing Library Query Methods
 
-When testing your components, quite often you will need to query the DOM to find specific elements. One of the most commonly used options is search based on text content. Another option is search based on the role of the element, which we will cover later.
+When testing your components, quite often you will need to query the DOM to find specific elements. One of the most commonly used 
+options is search based on text content. Another option is search based on the role of the element, which we will cover later.
 
 getByText, queryByText, findByText, getAllByText, queryAllByText, findAllByText
 
