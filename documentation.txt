@@ -79,3 +79,40 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 
 13. SearchByRole Methods Overview
 -otvorimo link: https://testing-library.com/docs/queries/about
+
+14. SearchByRole Test File
+-u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo komponentu Sandbox.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-prvi argument je opis testova za nav element i navigacione elemente, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />)
+-pozivamo funkciju expect(screen.getByRole('navigation')).toBeInTheDocument()
+-pozivamo dvije funkcije expect() za linkove Home i About
+-importujemo funkcija logRoles iz paketa testing-library/react
+-vrijednost funkcije render(<Sandbox />) pohranjujemo u destruktuiranu varijablu const { container }
+-pozivamo funkciju logRoles(container)
+-pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za renderovanja naslova sa tacnim redoslijedom, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />)
+-pozivamo dvije funkcije expect(screen.getByRole('heading', { ... }))
+-pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za renderovanja img elementa, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />)
+- pozivamo funkciju expect(screen.getByRole('img', { ... }))
+-pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za renderovanja button elemenata, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />)
+-pozivamo tri funkcije expect(screen.getByRole('button', { .. }))
+-pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za renderovanja button error elementa, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />) 
+-pozivamo funkciju expect(screen.queryByRole('button', { ... })) 
+-pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za renderovanja asinhronog button elementa, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />) 
+-kreiramo varijablu const buttonName
+-pozivamo funkciju expect(screen.queryByRole('button', { ... }))
+-kreiramo varijablu const asyncButton
+-pozivamo funkciju expect(asyncButton).toBeInTheDocument()

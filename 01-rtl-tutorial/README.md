@@ -663,10 +663,10 @@ The key is choosing the right query method based on your testing needs:
 ./src/tutorial/03-search-by-role/Sandbox.test.tsx
 
 ```tsx
-import { render, screen } from '@testing-library/react';
+import { render, screen, logRoles } from '@testing-library/react';
 import Sandbox from './Sandbox';
-import { logRoles } from '@testing-library/react';
-describe('Sandbox Component', () => {
+
+describe('03-search-by-role', () => {
   test('renders nav and  navigation links', () => {
     const { container } = render(<Sandbox />);
     expect(screen.getByRole('navigation')).toBeInTheDocument();
