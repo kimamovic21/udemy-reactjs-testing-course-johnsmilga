@@ -545,12 +545,15 @@ export default Sandbox;
 
   ![Queries in RTL](./public/queries.png)
 
-So far we have learned about search by text content methods, which find elements by their visible content, just like users would read them but there is another option, often superior, which is search by role. I will discuss why search by role is superior in a moment for now let's learn about the different query methods.
+- So far we have learned about search by text content methods, which find elements by their visible content, 
+  just like users would read them but there is another option, often superior, which is search by role. 
+- I will discuss why search by role is superior in a moment for now let's learn about the different query methods.
 
-getByRole and getByText are widely used because they closely mirror how users interact with your application. getByText is intuitive as it finds elements by their visible content, just like users would read them. However, getByRole is often superior because it ensures your app is accessible - it works with the same ARIA roles that screen readers use.
-
-In short queryByRole is superior to queryByText because it ensures your app is accessible.
-If you
+- getByRole and getByText are widely used because they closely mirror how users interact with your application. 
+- getByText is intuitive as it finds elements by their visible content, just like users would read them. 
+- However, getByRole is often superior because it ensures your app is accessible - it works with the same ARIA roles 
+  that screen readers use.
+- In short queryByRole is superior to queryByText because it ensures your app is accessible.
 
 getByRole, queryByRole, findByRole, getAllByRole, queryAllByRole, findAllByRole
 

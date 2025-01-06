@@ -76,3 +76,6 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 12. <SearchByRole /> Component
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/03-search-by-role
 -u komponentu Sandbox.tsx importujemo funkcije useState i useEffect iz biblioteke React
+
+13. SearchByRole Methods Overview
+-otvorimo link: https://testing-library.com/docs/queries/about
