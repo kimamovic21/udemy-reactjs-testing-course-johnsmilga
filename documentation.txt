@@ -70,3 +70,5 @@ Quiz 1: React Testing Library Essentials Quiz
 -kreiramo varijablu const heading
 -pozivamo funkciju expect(heading).toBeInTheDocument()
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/02-tdd-example
+
+Quiz 2: React Testing Library Query Methods and TDD Basics Quiz

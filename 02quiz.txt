@@ -1,0 +1,36 @@
+Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
+
+
+Question 1: 
+What is the purpose of the exclude array in the vite.config.ts file?
+
+Correct answer: 
+Prevent specific directories, such as node_modules and final from being included in the test runner
+
+
+Question 2: 
+What is the difference between getByText and queryByText?
+
+Correct answer: 
+getByText throws an error if the element is not found, while queryByText returns null in this case
+
+
+Question 3:
+Which query method should you use to test for an async message?
+
+Correct answer: 
+findByText
+
+
+Question 4:
+What is the key benefit of using TDD (Test-Driven Development)?
+
+Correct answer: 
+Encourages better code design and architecture by thinking about usage before implementation
+
+
+Question 5:
+Which of the following statements about findBy... query methods is correct?
+
+Correct answer: 
+findBy... returns a Promise and is used for async elements
