@@ -240,3 +240,5 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -pozivamo tri funkcije await user.type() i jednu funkciju await user.click()
 -pozivamo tri funkcije expect() i queryByText()
 -pozivamo tri funkcije expect() i toHaveValue()
+
+Quiz 4: Form Testing in React: Best Practices

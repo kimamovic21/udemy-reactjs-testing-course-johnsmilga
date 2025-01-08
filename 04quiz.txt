@@ -1,0 +1,36 @@
+Quiz 4: Form Testing in React: Best Practices
+
+
+Question 1: 
+How can you verify that all form inputs are initially empty in a test?
+
+Correct answer: 
+Use expect() with toHaveValue('') for each input field
+
+
+Question 2: 
+Which query method is most suitable for asserting that an error message does not initially exist in the document?
+
+Correct answer: 
+queryByText
+
+
+Question 3:
+How can you simulate typing into the email input and verify the entered value?
+
+Correct answer: 
+Use user.type to type into the input, followed by expect with toHaveValue
+
+
+Question 4:
+How do you test that an invalid email triggers the correct error message?
+
+Correct answer: 
+Type an invalid email, submit the form, and use getByText to confirm the error message is displayed
+
+
+Question 5:
+Which testing strategy should you use to confirm that all fields clear after a successful form submission?
+
+Correct answer: 
+Check each input field with toHaveValue('') after simulating the form submission
