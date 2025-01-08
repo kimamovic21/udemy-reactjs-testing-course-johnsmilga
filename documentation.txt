@@ -158,3 +158,21 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -dodajemo uslove if za validaciju email adrese i unesenih sifri
 -u uslove if dodajemo izjavu return setError()
 -u funkciji handleSubmit() pozivamo funkciju setSignupInput(defaultState)
+
+18. Test Empty Inputs
+-kreiramo komponentu Sandbox.test.tsx
+-u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo komponentu Sandbox.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />)
+-vrijednost funkcije render(<Sandbox />) pohranjujemo u destruktuiranu varijablu const { container }
+-pozivamo funkciju screen.debub()
+-pozivamo funkciju logRoles(container)
+-kreiramo varijablu const emailInputElement
+-pozivamo funkciju expect(emailInputElement).toHaveValue('')
+-kreiramo varijablu const passwordInputElement
+-pozivamo funkciju expect(passwordInputElement).toHaveValue('')
+-kreiramo varijablu confirmPasswordInputElement
+-pozivamo funkciju expect(confirmPasswordInputElement).toHaveValue('')
+-u vite.config.js fajlu, u niz exclude dodajemo imena foldera u kojima ne zelimo da se testovi pokrecu
