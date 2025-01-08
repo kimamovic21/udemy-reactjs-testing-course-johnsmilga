@@ -209,3 +209,34 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -importujemo tip UserEvent iz paketa testing-library/user-event
 -u funkciji describe() kreiramo varijablu let user sa tipom UserEvent
 -u funkciji beforeEach() redeklarisemo varijablu user sa vrijednoscu userEvent.setup()
+
+21. Form Testing - Remaining Tests
+-u komponenti Sandbox.test.tsx pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za prikazivanje poruke greska ako email nije validan, dok je drugi argument anonimna asinhrona funkcija
+-u funkciji test() pozivamo funkciju getFormElements()
+-vrijednoscu funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInputElement, submitButton }
+-pozivamo funkciju expect()
+-pozivamo funkciju await user.type(emailInputElement, 'invalid')
+-pozivamo funkciju await user.click(submitButton)
+-pozivamo funkciju expect()
+-pozivamo funkciju test()
+-prvi argument je opis testa za prikazivanje poruke greska ako sifra nije validna, dok je drugi argument anonimna asinhrona funkcija
+-u funkciji test() pozivamo funkciju getFormElements()
+-vrijednoscu funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInputElement, passwordInputElement, submitButton }
+-pozivamo funkciju expect()
+-pozivamo dvije funkcije await user.type() i jednu funkciju await user.click()
+-pozivamo funkciju expect()
+-pozivamo funkciju test()
+-prvi argument je opis testa za prikazivanje poruke greska ukoliko se sifre ne podudaraju, dok je drugi argument anonimna asinhrona funkcija
+-u funkciji test() pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u cetiri destruktuirane varijable
+-pozivamo funkciju expect()
+-pozivamo tri funkcije await user.type() i jednu funkciju await user.click()
+-pozivamo funkciju expect()
+-pozivamo funkciju test()
+-prvi argument je opis testa za neprikazivanje poruke greska nakon uspjesnog slanja forme, dok je drugi argument anonimna asinhrona funkcija
+-u funkciji test() pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u cetiri destruktuirane varijable
+-pozivamo tri funkcije await user.type() i jednu funkciju await user.click()
+-pozivamo tri funkcije expect() i queryByText()
+-pozivamo tri funkcije expect() i toHaveValue()

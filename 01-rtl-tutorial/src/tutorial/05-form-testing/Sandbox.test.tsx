@@ -51,4 +51,67 @@ describe('05-form-testing', () => {
     await user.type(confirmPasswordInputElement, 'secret');
     expect(confirmPasswordInputElement).toHaveValue('secret');
   });
+
+  test('should show email error if email is invalid', async () => {
+    const { emailInputElement, submitButton } = getFormElements();
+  
+    expect(screen.queryByText(/invalid email/i)).not.toBeInTheDocument();
+  
+    await user.type(emailInputElement, 'invalid');
+    await user.click(submitButton);
+  
+    expect(screen.getByText(/invalid email/i)).toBeInTheDocument();
+  });
+
+  test('should show password error if password is less than 5 characters', async () => {
+    const { emailInputElement, passwordInputElement, submitButton } = getFormElements();
+  
+    expect(screen.queryByText(/password must be at least 5 characters/i)).not.toBeInTheDocument();
+  
+    await user.type(emailInputElement, 'test@test.com');
+    await user.type(passwordInputElement, 'abcd');
+    await user.click(submitButton);
+  
+    expect(screen.getByText(/password must be at least 5 characters/i)).toBeInTheDocument();
+  });
+
+  test('should show error if passwords do not match', async () => {
+    const {
+      emailInputElement,
+      passwordInputElement,
+      confirmPasswordInputElement,
+      submitButton,
+    } = getFormElements();
+
+    expect(screen.queryByText(/passwords do not match/i)).not.toBeInTheDocument();
+  
+    await user.type(emailInputElement, 'test@test.com');
+    await user.type(passwordInputElement, 'secret');
+    await user.type(confirmPasswordInputElement, 'notsecret');
+    await user.click(submitButton);
+  
+    expect(screen.getByText(/passwords do not match/i)).toBeInTheDocument();
+  });
+
+  test('valid inputs show no errors and clear fields', async () => {
+    const {
+      emailInputElement,
+      passwordInputElement,
+      confirmPasswordInputElement,
+      submitButton,
+    } = getFormElements();
+
+    await user.type(emailInputElement, 'test@test.com');
+    await user.type(passwordInputElement, 'secret');
+    await user.type(confirmPasswordInputElement, 'secret');
+    await user.click(submitButton);
+  
+    expect(screen.queryByText(/invalid email/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/password must be at least 5 characters/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/passwords do not match/i)).not.toBeInTheDocument();
+    
+    expect(emailInputElement).toHaveValue('');
+    expect(passwordInputElement).toHaveValue('');
+    expect(confirmPasswordInputElement).toHaveValue('');
+  });
 });
