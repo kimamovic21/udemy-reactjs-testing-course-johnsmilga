@@ -133,3 +133,5 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 -prvi argument je opis testova, dok je drugi argument anonimna funkcija
 -u komponenti Sandbox.tsx button elementima dodajemo atribut aria-label
 -u funkciji describe() pozivamo cetiri funkcije test()
+
+Quiz 3: React Testing Library: Search By Role and User Interactions Quiz

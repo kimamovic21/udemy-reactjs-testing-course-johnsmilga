@@ -1,0 +1,36 @@
+Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
+
+
+Question 1: 
+What is the key benefit of using getByRole over getByText?
+
+Correct answer: 
+It ensures your application is accessible by working with ARIA roles
+
+
+Question 2: 
+Which query method should you use to check if an element is initially absent?
+
+Correct answer: 
+queryByRole
+
+
+Question 3:
+When testing an async button that appears after a delay, which query method should you use?
+
+Correct answer: 
+findByRole
+
+
+Question 4:
+Why is userEvent preferred over fireEvent for simulating user interactions?
+
+Correct answer: 
+It simulates realistic user interactions, including event chains like focus and bluer
+
+
+Question 5:
+Which approach is better for rendering distinct button states (e.g., "Like" and "Unlike") and why?
+
+Correct answer: 
+Creating separate buttons for each state with explicit labels
