@@ -135,3 +135,26 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 -u funkciji describe() pozivamo cetiri funkcije test()
 
 Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
+
+17. Form Testing - Sandbox
+-otvorimo link: https://www.npmjs.com/package/validator
+-u komponentu App.tsx importujemo komponentu Sandbox iz foldera tutorial/05-form-testing
+-u komponentu Sandbox.tsx importujemo funkcije useState i validator
+-kreiramo varijablu objekt const defaultState
+-kreiramo varijable const labelStyles, inputStyles i buttonsStyles
+-u funkciji Sandbox() kreiramo state varijablu const signupInput i set funkciju setSignupInput
+-kreiramo state varijablu const error i set funkciju setError
+-kreiramo funkcije handleChange() i handleSubmit()
+-u jsx-u roditelj div elementu dodajemo Tailwind CSS klase
+-u roditelj div elementu kreiramo form element
+-u form elementu kreiramo tri div element za email, sifru i potvrdi sifru elemente
+-dodajemo uslov za kondicionalno renderovanje error &&
+-kreiramo button element sa prop type, onClick i className 
+-funkciji handleChange() dodajemo parametar e sa tipom
+-u funkciji handleChange() destruktuiramo varijable const { id, value }
+-pozivamo funkciju setSignupInput()
+-funkciji handleSubmit() dodajemo parametar e sa tipom
+-u funkciji handleSubmit() pozivamo funkciju e.preventDefault()
+-dodajemo uslove if za validaciju email adrese i unesenih sifri
+-u uslove if dodajemo izjavu return setError()
+-u funkciji handleSubmit() pozivamo funkciju setSignupInput(defaultState)

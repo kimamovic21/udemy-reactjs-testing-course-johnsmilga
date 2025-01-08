@@ -978,9 +978,12 @@ generally outweigh the benefit of having less code.
 
 ## Form Testing
 
-Alright and once we are familiar with fundamentals of testing user interactions, let's learn how to test forms. Since we'll be testing multiple form features, our test file will be quite long and at very end of the chapter I will show possible ways to refactor for better readability.
+- Alright and once we are familiar with fundamentals of testing user interactions, let's learn how to test forms. 
+- Since we'll be testing multiple form features, our test file will be quite long and at very end of the chapter I 
+  will show possible ways to refactor for better readability.
 
-Also, for this section, I recommend having your browser open since we'll want to see the form in action. Let's start by importing and rendering Sandbox.tsx in App.tsx.
+- Also, for this section, I recommend having your browser open since we'll want to see the form in action. 
+- Let's start by importing and rendering Sandbox.tsx in App.tsx.
 
 - import and render `src/tutorial/05-form-testing/Sandbox.tsx` in `App.tsx`
 
@@ -996,8 +999,7 @@ import validator from 'validator';
 
 const labelStyles = 'block text-grey-700 font-medium mb-2';
 const inputStyles = 'w-full px-3 py-2 border border-gray-300 rounded-md';
-const buttonsStyles =
-  'w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600';
+const buttonsStyles = 'w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600';
 
 const defaultState = {
   email: '',
