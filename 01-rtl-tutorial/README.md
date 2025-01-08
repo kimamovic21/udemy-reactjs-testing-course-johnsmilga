@@ -1107,7 +1107,7 @@ describe('05-form-testing', () => {
   test('should be able to type in the input', async () => {
     const user = userEvent.setup();
     render(<Sandbox />);
-    
+
     const emailInputElement = screen.getByRole('textbox', { name: /email/i });
     await user.type(emailInputElement, 'test@test.com');
     expect(emailInputElement).toHaveValue('test@test.com');
@@ -1185,7 +1185,8 @@ describe('05-form-testing', () => {
 });
 ```
 
-userEvent.setup() should be called before render() to make sure all the fake mouse and keyboard stuff is ready before your component appears, just like in a real browser.
+userEvent.setup() should be called before render() to make sure all the fake mouse and keyboard stuff is ready before your 
+component appears, just like in a real browser.
 
 Here's why this order matters:
 
@@ -1193,7 +1194,8 @@ Here's why this order matters:
 2. `render()` renders the component into the testing environment
 3. Having setup first ensures the user event utilities are ready when the component renders
 
-While the code might still work with userEvent.setup() after render(), following this order ensures the most reliable test behavior and follows established testing patterns in the React community.
+While the code might still work with userEvent.setup() after render(), following this order ensures the most reliable test 
+behavior and follows established testing patterns in the React community.
 
 Example:
 

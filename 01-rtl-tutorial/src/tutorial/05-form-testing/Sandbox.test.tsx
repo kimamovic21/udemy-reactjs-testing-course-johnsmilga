@@ -1,36 +1,53 @@
 import { render, screen, logRoles } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { beforeEach } from 'vitest';
+import userEvent, { UserEvent } from '@testing-library/user-event';
 import Sandbox from './Sandbox';
 
+const getFormElements = () => {
+  const elements = {
+    emailInputElement: screen.getByRole('textbox', { name: /email/i }),
+    passwordInputElement: screen.getByLabelText('Password'),
+    confirmPasswordInputElement: screen.getByLabelText(/confirm password/i),
+    submitButton: screen.getByRole('button', { name: /submit/i }),
+  };
+  
+  return elements;
+};
+
 describe('05-form-testing', () => {
+  let user: UserEvent;
+
+  beforeEach(() => {
+    // console.log('Hello world')
+    user = userEvent.setup();
+    render(<Sandbox />);
+  });
+
   test('inputs should be initially empty', () => {
-    const { container } = render(<Sandbox />);
-    screen.debug();
-    logRoles(container);
+    const {
+      emailInputElement,
+      passwordInputElement,
+      confirmPasswordInputElement,
+    } = getFormElements();
 
-    const emailInputElement = screen.getByRole('textbox', { name: /email/i });
     expect(emailInputElement).toHaveValue('');
-
-    const passwordInputElement = screen.getByLabelText('Password');
     expect(passwordInputElement).toHaveValue('');
-
-    const confirmPasswordInputElement = screen.getByLabelText(/confirm password/i);
     expect(confirmPasswordInputElement).toHaveValue('');
   });
 
   test('should be able to type in the input', async () => {
-    const user = userEvent.setup();
-    render(<Sandbox />);
-    
-    const emailInputElement = screen.getByRole('textbox', { name: /email/i });
+    const {
+      emailInputElement,
+      passwordInputElement,
+      confirmPasswordInputElement,
+    } = getFormElements();
+
     await user.type(emailInputElement, 'test@test.com');
     expect(emailInputElement).toHaveValue('test@test.com');
 
-    const passwordInputElement = screen.getByLabelText('Password');
     await user.type(passwordInputElement, 'secret');
     expect(passwordInputElement).toHaveValue('secret');
 
-    const confirmPasswordInputElement = screen.getByLabelText(/confirm password/i);
     await user.type(confirmPasswordInputElement, 'secret');
     expect(confirmPasswordInputElement).toHaveValue('secret');
   });

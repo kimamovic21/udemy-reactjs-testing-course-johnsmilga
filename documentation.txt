@@ -192,3 +192,20 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -pozivamo funkciju expect(passwordInputElement).toHaveValue('secret')
 -pozivamo funkciju await user.type(confirmPasswordInputElement, 'secret')
 -pozivamo funkciju expect(confirmPasswordInputElement).toHaveValue('secret')
+
+20. Refactor
+-u komponenti Sandbox.test.tsx kreiramo funkciju getFormElements()
+-u funkciji getFormElements() kreiramo varijablu objekt const elements
+-u objektu elements kreiramo key - value parove emailInputElement, passwordInputElement, confirmPasswordInputElement i submitButton
+-u funkciju getFormElements() dodajemo izjavu return elements
+-u funkciji test() za inicijalno prikazivanje input elemenata kao prazna polja pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijablu: const { emailInputElement, passwordInputElement, confirmPasswordInputElement }
+-pozivamo tri funkcije expect()
+-u funkciji test() za testiranje input elemenata da se mogu unijeti podaci pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo destruktuiranu varijablu const { emailInputElement, passwordInputElement, confirmPasswordInputElement } 
+-otvorimo link: https://www.npmjs.com/package/vitest
+-importujemo funkciju beforeEach iz paketa Vitest
+-u funkciji describe() pozivamo funkciju beforeEach()
+-importujemo tip UserEvent iz paketa testing-library/user-event
+-u funkciji describe() kreiramo varijablu let user sa tipom UserEvent
+-u funkciji beforeEach() redeklarisemo varijablu user sa vrijednoscu userEvent.setup()
