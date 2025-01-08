@@ -165,6 +165,8 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -importujemo komponentu Sandbox.tsx
 -pozivamo funkciju describe() sa dva argumenta
 -prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za testiranje input elemenata da budu inicijalno prazna, dok je drugi argument anonimna funkcija
 -u anonimnoj funkciji pozivamo funkciju render(<Sandbox />)
 -vrijednost funkcije render(<Sandbox />) pohranjujemo u destruktuiranu varijablu const { container }
 -pozivamo funkciju screen.debub()
@@ -176,3 +178,17 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -kreiramo varijablu confirmPasswordInputElement
 -pozivamo funkciju expect(confirmPasswordInputElement).toHaveValue('')
 -u vite.config.js fajlu, u niz exclude dodajemo imena foldera u kojima ne zelimo da se testovi pokrecu
+
+19. Test Typing in The Inputs
+-u komponentu Sandbox.test.tsx importujemo funkciju userEvent iz paketa testing-library/user-event
+-pozivamo funkciju test() sa dva argumenta
+-prvi argument je opis testa za testiranje input elemenata da se mogu unijeti podaci, dok je drugi argument asinhrona anonimna funkcija
+-u asinhronoj anonimnoj funkciji kreiramo varijablu const user
+-pozivamo funkciju render(<Sandbox />)
+-kreiramo varijable const emailInputElement, passwordInputElement i confirmPasswordInputElement
+-pozivamo funkciju await user.type(emailInputElement, 'test@test.com')
+-pozivamo funkciju expect(emailInputElement).toHaveValue('test@test.com')
+-pozivamo funkciju await user.type(passwordInputElement, 'secret')
+-pozivamo funkciju expect(passwordInputElement).toHaveValue('secret')
+-pozivamo funkciju await user.type(confirmPasswordInputElement, 'secret')
+-pozivamo funkciju expect(confirmPasswordInputElement).toHaveValue('secret')
