@@ -317,3 +317,50 @@ Quiz 4: Form Testing in React: Best Practices
 -u funkciji forEach() pozivamo dvije funkcije expect() za varijable review.email i review.text
 -kreiramo varijablu const stars 
 -pozivamo funkciju expect() za varijablu stars
+
+24. Reviews App - Form Component Unit Tests
+-kreiramo komponentu Form.test.tsx
+-u komponentu Form.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo funkciju userEvent iz paketa testing-library/user-event
+-importujemo komponentu Form.tsx
+-importujemo funkcije describe, test, expect i vi iz paketa Vitest
+-kreiramo funkciju getFormElements()
+-u funkciji getFormElements() kreiramo cetiri varijable const emailInput, const ratingSelect, textArea i submitButton
+-dodajemo izjavu return { emailInput, ratingSelect, textArea, submitButton }
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testa za formu, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju vi.fn()
+-vrijednost funkcije vi.fn() pohranjujemo u varijablu const mockOnSubmit
+-pozivamo funkciju beforeEach()
+-u funkciji beforeEach() pozivamo funkciju mockOnSubmit.mockClear()
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje elemenata iz forme, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Form onSubmit={mockOnSubmit} />)
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInput, ratingSelect, textArea, submitButton }
+-pozivamo cetiri funkcije expect() i toHaveValue()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za prikazivanje poruke greska ako recenzija ima kratak tekst, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji kreiramo varijablu const test
+-pozivamo funkciju render(<Form onSubmit={mockOnSubmit} />)
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInput, ratingSelect, textArea, submitButton }
+-pozivamo funkciju await user.type() za varijablu emailInput
+-pozivamo funkciju await user.selectOptions() za varijablu ratingSelect
+-pozivamo funkciju await user.type() za varijablu textArea
+-pozivamo funkciju await user.click() za varijablu submitButton
+-pozivamo dvije funkcije expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za slanje tacnih podataka iz forme, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji kreiramo varijablu const user
+-pozivamo funkciju render(<Form onSubmit={mockOnSubmit} />)
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInput, ratingSelect, textArea, submitButton }
+-pozivamo funkciju await user.type() za varijablu emailInput
+-pozivamo funkciju await user.selectOptions() za varijablu ratingSelect
+-pozivamo funkciju await user.type() za varijablu textArea
+-pozivamo funkciju await user.click() za varijablu submitButton
+-pozivamo funkciju expect(mockOnSubmit).toHaveBeenCalledTimes(1)
+-pozivamo funkciju expect(mockOnSubmit).toHaveBeenCalledWith()
+-u funkciju toHaveBeenCalledWith({ }) proslijedujemo objekt sa podacima za vrijednosti email, rating i text
+-pozivamo tri funkcije expect() za varijable emailInput, ratingSelect i textArea

@@ -1577,8 +1577,8 @@ Form.test.tsx
 
 ```tsx
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { describe, test, expect, vi } from 'vitest';
+import userEvent from '@testing-library/user-event';
 import ReviewForm from '../Form';
 
 export const getFormElements = () => {
@@ -1609,8 +1609,8 @@ describe('ReviewForm', () => {
 
   test('renders form elements correctly', () => {
     render(<ReviewForm onSubmit={mockOnSubmit} />);
-    const { emailInput, ratingSelect, textArea, submitButton } =
-      getFormElements();
+    const { emailInput, ratingSelect, textArea, submitButton } = getFormElements();
+
     expect(emailInput).toHaveValue('');
     expect(ratingSelect).toHaveValue('');
     expect(textArea).toHaveValue('');
@@ -1623,17 +1623,14 @@ describe('ReviewForm', () => {
 
     // since inputs have html required attribute, all of them need to be filled, in order test short review error
 
-    const { emailInput, ratingSelect, textArea, submitButton } =
-      getFormElements();
+    const { emailInput, ratingSelect, textArea, submitButton } = getFormElements();
 
     await user.type(emailInput, 'test@example.com');
     await user.selectOptions(ratingSelect, '5');
     await user.type(textArea, 'Short');
     await user.click(submitButton);
 
-    expect(
-      screen.getByText(/review must be at least 10 characters long/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/review must be at least 10 characters long/i)).toBeInTheDocument();
     expect(mockOnSubmit).not.toHaveBeenCalled();
   });
 
@@ -1641,19 +1638,16 @@ describe('ReviewForm', () => {
     const user = userEvent.setup();
     render(<ReviewForm onSubmit={mockOnSubmit} />);
 
-    const { emailInput, ratingSelect, textArea, submitButton } =
-      getFormElements();
+    const { emailInput, ratingSelect, textArea, submitButton } = getFormElements();
 
     await user.type(emailInput, 'test@example.com');
     await user.selectOptions(ratingSelect, '5');
-    await user.type(
-      textArea,
-      'This is a valid review text that is long enough'
-    );
+    await user.type(textArea, 'This is a valid review text that is long enough');
     await user.click(submitButton);
 
     // We can validate the form submission because mockOnSubmit is a mock function (vi.fn())
     // that keeps track of all calls made to it. This allows us to verify:
+    expect(mockOnSubmit).toHaveBeenCalledTimes(1);
     expect(mockOnSubmit).toHaveBeenCalledWith({
       email: 'test@example.com',
       rating: '5',
