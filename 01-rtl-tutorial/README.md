@@ -1526,8 +1526,8 @@ List.test.tsx
 ```tsx
 import { render, screen } from '@testing-library/react';
 import { describe, test, expect } from 'vitest';
+import { type Review } from '../Sandbox';
 import List from '../List';
-import { Review } from '../Sandbox';
 
 // Mock data is used to simulate real data that would typically come from an API or user input
 // This allows us to test our components in isolation without depending on external services
@@ -1549,9 +1549,7 @@ const mockReviews: Review[] = [
 describe('List Component', () => {
   test('renders heading', () => {
     render(<List reviews={mockReviews} />);
-    expect(
-      screen.getByRole('heading', { level: 2, name: /reviews/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /reviews/i })).toBeInTheDocument();
   });
 
   test('displays "No reviews yet" when reviews array is empty', () => {

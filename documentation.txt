@@ -288,3 +288,32 @@ Quiz 4: Form Testing in React: Best Practices
 -elementu article dodajemo prop key i className
 -u elementu article kreiramo dva div elementa
 -kreiramo p element
+
+23. Reviews App - List Component Unit Tests
+-kreiramo folder __tests__ 
+-u folderu __tests__ kreiramo komponentu List.test.tsx komponentu
+-u komponentu List.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo tip Review iz komponente Sandbox.tsx
+-importujemo komponentu List.tsx
+-importujemo funkcije describe, test i expect iz paketa Vitest
+-pozivamo funkciju describe() sa dva argumenta
+-prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkcija test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje naslova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render()
+-u funkciju render() proslijedujemo komponentu List sa prop reviews
+-u prop review proslijedujemo prazan niz
+-pozivamo funkciju expect()
+-kreiramo varijablu niz const mockReviews sa tipom Review[]
+-u prop reviews proslijedujemo niz mockReviews
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za prikazivanje poruke da nema recenzija ukoliko je niz recenzija prazan, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<List reviews={[]} />)
+-pozivamo funkciju expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za prikazivanje recenzija ukoliko postoje ispravni podaci, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju  render(<List reviews={mockReviews} />)
+-pozivamo metodu mockReviews.forEach()
+-u funkciji forEach() pozivamo dvije funkcije expect() za varijable review.email i review.text
+-kreiramo varijablu const stars 
+-pozivamo funkciju expect() za varijablu stars
