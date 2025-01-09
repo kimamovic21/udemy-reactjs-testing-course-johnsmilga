@@ -404,3 +404,40 @@ Quiz 4: Form Testing in React: Best Practices
 -pozivamo jednu funkciju expect()
 
 Quiz 5: Testing Logic in Reviews App: Components and Integration
+
+
+Section 03: React Testing 101: Application Setup and Configuration
+
+26. Create and Configure Template for Testing React Applications
+-kreiramo folder 02-testing-project-template
+-u terminalu ukucamo komandu npm create vite@latest .
+-udemo u project cd 02-testing-project-template i ukucamo komandu npm i
+-ukucamo komandu npm run dev
+-u drugom terminalu ukucamo komandu npm i vitest --save-dev
+-u package.json fajlu dodajemo komandu "test": "vitest"
+-kreiramo random.test.ts fajl
+-u random.test.ts fajl importujemo funkcije describe, text i expect iz paketa Vitest
+-pozivamo funkciju describe()
+-u funkciji describe() pozivamo dvije funkcije test()
+-u terminalu ukucamo komandu npm test
+-ukucamo komandu npm i @testing-library/react @testing-library/jest-dom --save-dev
+-otvorimo link: https://www.npmjs.com/package/jsdom
+-ukucamo komandu npm i jsdom @testing-library/user-event
+-u vite.config.js fajlu dodajemo objekt test
+-u objekt test dodajemo opciju environment: 'jsdom'
+-u folderu src kreiramo vitest.setup.ts fajl
+-u vitest.setup.ts fajl importujemo funkcije expect i afterEach iz paketa Vitest
+-importujemo funkciju cleanup iz paketa testing-library/react
+-importujemo * kao matchers iz paketa testing-library/jest-dom/matchers
+-pozivamo funkciju expect.extend(matchers)
+-pozivamo funkciju afterEach()
+-u vite.config.ts fajlu, u objekt test dodajemo opcije globals: true i setupFiles: './src/vitest.setup.ts'
+-promjenimo import funkcije defineConfig u vitest/config
+-u tsconfig.app.json fajlu dodajemo opciju types
+-kreiramo komponentu Random.tsx
+-kreiramo folder __tests__ i komponentu Random.test.tsx
+-u komponentu Random.test.tsx importujemo funkcije describe, test i expect iz paketa Vitest
+-importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo funkciju Random.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() pozivamo funkciju test
