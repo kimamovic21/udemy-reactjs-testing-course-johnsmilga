@@ -402,3 +402,5 @@ Quiz 4: Form Testing in React: Best Practices
 -pozivamo funkciju await user.type() za varijablu textArea
 -pozivamo funkciju await user.click() za varijablu submitButton
 -pozivamo jednu funkciju expect()
+
+Quiz 5: Testing Logic in Reviews App: Components and Integration

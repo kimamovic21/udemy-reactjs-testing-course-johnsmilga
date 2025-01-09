@@ -1,0 +1,36 @@
+Quiz 5: Testing Logic in Reviews App: Components and Integration
+
+
+Question 1: 
+How can you verify that the "No reviews yet" message is displayed when the reviews list is empty?
+
+Correct answer: 
+getByText
+
+
+Question 2: 
+How do you test that an error message is shown when a review text is too short?
+
+Correct answer: 
+getByText
+
+
+Question 3:
+What is the purpose of a mock function (e.g., vi.fn()) in form testing?
+
+Correct answer: 
+To test the form submission logic independently of external dependencies
+
+
+Question 4:
+How can you verify that submitting a valid review adds it to the reviews list?
+
+Correct answer: 
+getByText
+
+
+Question 5:
+What distinguishes an integration test from a unit test in this context?
+
+Correct answer: 
+Integration tests validate the interaction between components, such as Form and List
