@@ -18,7 +18,8 @@ export default defineConfig({
       '**/02-tdd-example/**', // Add this line to exclude the 02 folder
       '**/03-search-by-role/**', // Add this line to exclude the 03 folder
       '**/04-user-interactions/**', // Add this line to exclude the 04 folder
-      // '**/05-form-testing/**', // Add this line to exclude the 05 folder
+      '**/05-form-testing/**', // Add this line to exclude the 05 folder
+      // '**/06-reviews-app/**',  // Add this line to exclude the 06 folder
       '**/.{idea,git,cache,output,temp}/**',
       '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress}.config.*',
     ],

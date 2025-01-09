@@ -242,3 +242,49 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -pozivamo tri funkcije expect() i toHaveValue()
 
 Quiz 4: Form Testing in React: Best Practices
+
+22. Reviews App - Logic
+-u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/06-reviews-app
+-kreiramo komponente Form.tsx i List.tsx
+-u komponentu Sandbox.tsx importujemo funkciju useState, komponente Form.tsx i List.tsx
+-kreiramo i eksportujemo tip Review
+-pozivamo funkciju useState() sa tipom <Review[]>
+-kreiramo state varijablu const reviews i set funkciju setReviews
+-kreiramo funkciju addReview() sa parametrom review
+-parametru review dodajemo tip Review
+-u funkciju addReview() dodajemo funkciju setReviews()
+-roditelj div elementu dodajemo Tailwind CSS klase
+-kreiramo h2 element
+-u roditelj div element dodajemo komponente Form i List
+-komponenti Form dodajemo prop onSubmit
+-komponenti List dodajemo prop reviews
+-u komponenti Form.tsx kreiramo tip ReviewFormProps
+-importujemo tip Review iz komponente Sandbox.tsx
+-importujemo funkcije useState i tip FormEvent iz biblioteke React
+-funkciji Form() dodajemo parametar destruktuirani prop onSubmit sa tipom ReviewFormProps
+-kreiramo state varijable email, rating, text i textError
+-kreiramo set funkcije setEmail, setRating, setText i setTextError
+-kreiramo funkciju handleSubmit() sa parametrom e
+-parametru e dodajemo tip FormEvent
+-u funkciju handleSubmit() dodajemo metodu e.preventDefault()
+-u jsx-u kreiramo roditelj form element sa dogadajem onSubmit i prop className
+-u dogadaj onSubmit proslijedujemo funkciju handleSubmit
+-u form elemenata kreiramo tri div elementa za unos podataka za email, ocjenu i recenziju
+-u div element za recenziju dodajemo uslov za kondicionalno renderovanje textError && 
+-kreiramo button element sa prop type i className
+-u funkciju handleSubmit() dodajemo uslove if (text.length >= 10) i else
+-u uslov else dodajemo funkciju setTextError()
+-u uslovu if kreiramo varijablu const newReview
+-dodajemo funkciju onSubmit(newReview)
+-dodajemo set funkcije setEmail(''), setRating(''), setText('') i setTextError('')
+-u komponentu List.tsx importujemo tip Review iz komponentama Sandbox.tsx
+-kreiramo tip ListProps
+-funkciji List() dodajemo parametar destruktuirani prop reviews sa tipom ListProps
+-u roditelj div elementu kreiramo h2 element
+-dodajemo uslov ternarni operator reviews.length === 0
+-u prvi dio ternarnog uslova dodajemo p element
+-u drugi dio ternarnog uslova dodajemo metodu reviews.map()
+-u funkciji map() kreiramo element article
+-elementu article dodajemo prop key i className
+-u elementu article kreiramo dva div elementa
+-kreiramo p element

@@ -2,7 +2,8 @@
 // import Sandbox from './tutorial/02-tdd-example/Sandbox';
 // import Sandbox from './tutorial/03-search-by-role/Sandbox';
 // import Sandbox from './tutorial/04-user-interactions/Sandbox';
-import Sandbox from './tutorial/05-form-testing/Sandbox';
+// import Sandbox from './tutorial/05-form-testing/Sandbox';
+import Sandbox from './tutorial/06-reviews-app/Sandbox';
 
 function App() {
   return (

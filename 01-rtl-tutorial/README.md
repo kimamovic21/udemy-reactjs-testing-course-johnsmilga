@@ -1347,7 +1347,11 @@ test('valid inputs show no errors and clear fields', async () => {
 
 ## Reviews App
 
-Alright and at very end of the tutorial, let's put everything together and create a bigger application with a form and a list of reviews and of course test it with RTL. This is a good time to challenge yourself by building the application first and then try to implement the tests yourself before watching the solution. Even if you can't finish it, you will learn a lot from the solution and it will be a good experience for you.
+- Alright and at very end of the tutorial, let's put everything together and create a bigger application with a form and a list 
+  of reviews and of course test it with RTL. 
+- This is a good time to challenge yourself by building the application first and then try to implement the tests yourself before 
+  watching the solution. 
+- Even if you can't finish it, you will learn a lot from the solution and it will be a good experience for you.
 
 - create Form and List components and render them in Sandbox
 
@@ -1370,6 +1374,7 @@ const Sandbox = () => {
   const addReview = (review: Review) => {
     setReviews([...reviews, review]);
   };
+
   return (
     <div className='max-w-xl mx-auto p-8'>
       <h1 className='text-2xl font-bold mb-8'>Reviews App</h1>
@@ -1378,6 +1383,7 @@ const Sandbox = () => {
     </div>
   );
 };
+
 export default Sandbox;
 ```
 
