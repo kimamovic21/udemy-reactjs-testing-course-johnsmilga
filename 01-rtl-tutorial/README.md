@@ -1664,7 +1664,9 @@ describe('ReviewForm', () => {
 
 Sandbox.test.tsx
 
-So far all our examples where unit tests, because we were testing the individual components, however, we can also test the interaction between the components. This is called an integration test, and we are going to see in action when testing our Sandbox component
+- So far all our examples where unit tests, because we were testing the individual components, however, we can also test 
+  the interaction between the components. 
+- This is called an integration test, and we are going to see in action when testing our Sandbox component
 
 - unit test
   When we are testing the individual components, we are testing them in isolation and it's called a unit test.
@@ -1673,17 +1675,15 @@ So far all our examples where unit tests, because we were testing the individual
 
 ```tsx
 import { render, screen } from '@testing-library/react';
+import { getFormElements } from './Form.test.tsx';
 import userEvent from '@testing-library/user-event';
 import Sandbox from '../Sandbox';
-import { getFormElements } from './Form.test.tsx';
 
 describe('Reviews App', () => {
   // Basic rendering test
   test('renders Reviews App title', () => {
     render(<Sandbox />);
-    expect(
-      screen.getByRole('heading', { level: 1, name: /reviews app/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: /reviews app/i })).toBeInTheDocument();
   });
 
   // Integration test for adding a review
@@ -1692,8 +1692,7 @@ describe('Reviews App', () => {
     render(<Sandbox />);
 
     // Get form elements
-    const { emailInput, ratingSelect, textArea, submitButton } =
-      getFormElements();
+    const { emailInput, ratingSelect, textArea, submitButton } = getFormElements();
 
     // Fill out the form
     await user.type(emailInput, 'test@example.com');
@@ -1708,15 +1707,16 @@ describe('Reviews App', () => {
     expect(screen.getByText('Great product!')).toBeInTheDocument();
     expect(screen.getByText('⭐'.repeat(5))).toBeInTheDocument();
   });
+
   test('alternative - adds a new review when form is submitted', async () => {
     const user = userEvent.setup();
     render(<Sandbox />);
 
     const reviews = screen.queryAllByRole('article');
     expect(reviews).toHaveLength(0);
+
     // Get form elements
-    const { emailInput, ratingSelect, textArea, submitButton } =
-      getFormElements();
+    const { emailInput, ratingSelect, textArea, submitButton } = getFormElements();
 
     // Fill out and submit form
     await user.type(emailInput, 'test@example.com');

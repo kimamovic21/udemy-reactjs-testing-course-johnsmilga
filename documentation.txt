@@ -364,3 +364,41 @@ Quiz 4: Form Testing in React: Best Practices
 -pozivamo funkciju expect(mockOnSubmit).toHaveBeenCalledWith()
 -u funkciju toHaveBeenCalledWith({ }) proslijedujemo objekt sa podacima za vrijednosti email, rating i text
 -pozivamo tri funkcije expect() za varijable emailInput, ratingSelect i textArea
+
+25. Reviews App - Sandbox Component Integration Tests
+-kreiramo komponentu Sandbox.test.tsx
+-u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo funkciju getFormElements iz komponente Form.test.tsx
+-importujemo funkciju userEvent iz paketa testing-library/user-event
+-importujemo komponentu Sandbox.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje naslova u komponenti, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<Sandbox />)
+-pozivamo funkciju expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za dodavanje nove recenzije nakon slanja forme, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj funkciji kreiramo varijablu const user 
+-pozivamo funkciju render(<Sandbox />)
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInput, ratingSelect, textArea, submitButton }
+-pozivamo funkciju await user.type() za varijablu emailInput
+-pozivamo funkciju await user.selectOptions() za varijablu ratingSelect
+-pozivamo funkciju await user.type() za varijablu textArea
+-pozivamo funkciju await user.click() za varijablu submitButton
+-pozivamo tri funkcije expect() i toBeInTheDocument()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis alternativnog testa za dodavanje nove recenzije nakon slanja forme, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj funkciji kreiramo varijablu const user 
+-pozivamo funkciju render(<Sandbox />)
+-pozivamo funkciju screen.queryAllByRole('article')
+-vrijednost funkcije screen.queryAllByRole('article') pohranjujemo u varijablu const reviews
+-pozivamo funkciju expect(reviews).toHaveLength(0)
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInput, ratingSelect, textArea, submitButton }
+-pozivamo funkciju await user.type() za varijablu emailInput
+-pozivamo funkciju await user.selectOptions() za varijablu ratingSelect
+-pozivamo funkciju await user.type() za varijablu textArea
+-pozivamo funkciju await user.click() za varijablu submitButton
+-pozivamo jednu funkciju expect()
