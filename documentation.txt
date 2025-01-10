@@ -480,3 +480,33 @@ Section 04: Test Driven Development - Focus Flow App
 -imporujemo komponentu ItemCard.tsx
 -funkciji List() dodajemo parametre destruktuirane prop items i onDelete
 -parametrima dodajemo tipove
+
+29. Focus Flow App - First Form Component Test
+-u folderu src kreiramo folder __tests__ i komponentu Form.test.tsx
+-u komponentu Form.test.tsx importujemo funkcije i tipove iz paketa za testiranje
+-kreiramo funkciju getFormElements()
+-pozivamo funkciju describe() sa dva argumenta
+-prvi argument je opis za testiranje Form komponente, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji kreiramo varijablu let user sa tipom UserEvent
+-pozivamo funkciju vi.fn()
+-vrijednost funkcije vi.fn() pohranjujemo u varijablu const mockOnSubmit
+-pozivamo funkciju beforeEach()
+-u funkciji beforeEach() pozivamo funkciju mockOnSubmit.mockClear()
+-pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu user
+-pozivamo funkciju render()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje praznih polja u formi, dok je drugi argument anonimna funkcija
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { titleInput, descriptionInput, categorySelect }
+-pozivamo tri funkcije expect()
+-u terminalu ukucamo komandu npm test
+-u komponentu Form.tsx importujemo funkciju useState iz biblioteke React
+-kreiramo tri state varijable title, description i category
+-kreiramo tri set funkcije setTitle, setDescription i setCategory
+-kreiramo funkciju handleSubmit() sa parametrom e
+-u funkciji handleSubmit() pozivamo funkciju e.preventDefault()
+-u roditelj div elementu kreiramo h2 element sa Tailwind CSS klasama
+-kreiramo form element sa dogadajem onSubmit i prop className
+-kreiramo tri div elementa za podatke o naslovu, opisu i kategoriji
+-kreiramo button element sa prop type i className

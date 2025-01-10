@@ -223,11 +223,11 @@ describe('Form Component', () => {
     expect(descriptionInput).toHaveValue('');
     expect(categorySelect).toHaveValue('');
   });
+
   // 2. Test submits form with entered values
   test('submits form with entered values', async () => {
     render(<Form onSubmit={mockOnSubmit} />);
-    const { titleInput, descriptionInput, categorySelect, submitButton } =
-      getElements();
+    const { titleInput, descriptionInput, categorySelect, submitButton } =  getElements();
 
     await user.type(titleInput, 'New Task');
     await user.type(descriptionInput, 'Task Description');
@@ -240,6 +240,7 @@ describe('Form Component', () => {
       category: 'urgent',
     });
   });
+
   // 3. Test validates required fields
   test('validates required fields', async () => {
     render(<Form onSubmit={mockOnSubmit} />);
@@ -247,11 +248,11 @@ describe('Form Component', () => {
     await user.click(submitButton);
     expect(mockOnSubmit).not.toHaveBeenCalled();
   });
+
   // 4. Test clears form after successful submission
   test('clears form after successful submission', async () => {
     render(<Form onSubmit={mockOnSubmit} />);
-    const { titleInput, descriptionInput, categorySelect, submitButton } =
-      getElements();
+    const { titleInput, descriptionInput, categorySelect, submitButton } = getElements();
 
     await user.type(titleInput, 'New Task');
     await user.type(descriptionInput, 'Task Description');
