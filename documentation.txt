@@ -539,3 +539,34 @@ Section 04: Test Driven Development - Focus Flow App
 -pozivamo funkciju await user.click(submitButton)
 -pozivamo tri funkcije expect()
 -u komponenti Form.tsx, u funkciju handleSubmit dodajemo funkcije setTitle(''), setDescription('') i setCategory('')
+
+31. Focus Flow App - List Component Tests
+-u folderu __tests__ kreiramo komponentu List.test.txt
+-u komponentu List.test.tsx importujemo funkcije iz paketa za testiranje
+-importujemo komponentu List.tsx
+-imporujemo tip Item iz utils.ts fajla
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji kreiramo varijablu niz const mockItems sa tipom Item[]
+-pozivamo funkciju vi.fn()
+-vrijednost funkcije vi.fn() pohranjujemo u varijablu const mockOnDelete
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje naslova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkcije render() i expect()
+-u komponenti List.tsx, u jsx-u kreiramo roditelj section element
+-u section elementu kreiramo h2 element
+-pozivamo funkciju vi.mock() sa dva argumenta
+-u funkciji mock() prvi argument je folder lokacije komponente ItemCard, dok je drugi argument anonimna funkcija
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje tacnog broja komponenti ItemCard, dok je drugi argument anonimna funkcija
+-pozivamo funkciju render()
+-kreiramo varijablu const cards
+-pozivamo funkciju expect(cards).toHaveLength(2)
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje praznog grid elementa kad je niz prazan, dok je drugi argument anonimna funkcija
+-pozivamo funkcije render() i screen()
+-u komponenti List.tsx, u section elementu kreiramo div element sa Tailwind CSS Grid klasama
+-u div elementu dodajemo metodu items?.map()
+-u funkciju map() dodajemo komponentu ItemCard sa prop key, {...item} i onDelete
+-pozivamo dvije test funkcije() sa dva argumenta
+-prvi argument je tekst ALTERNATIVE (alternativni testovi za prethoda dva testa), dok je drugi argument anonimna funkcija
