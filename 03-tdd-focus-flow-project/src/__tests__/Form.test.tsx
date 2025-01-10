@@ -18,12 +18,54 @@ describe('Form Component', () => {
   beforeEach(() => {
     mockOnSubmit.mockClear();
     user = userEvent.setup();
-    render(<Form onSubmit={mockOnSubmit} />)
   });
 
   test('renders form with empty fields initially', () => {
+    render(<Form onSubmit={mockOnSubmit} />);
+
     const { titleInput, descriptionInput, categorySelect } = getElements();
 
+    expect(titleInput).toHaveValue('');
+    expect(descriptionInput).toHaveValue('');
+    expect(categorySelect).toHaveValue('');
+  });
+
+  test('submits form with entered values', async () => {
+    render(<Form onSubmit={mockOnSubmit} />);
+
+    const { titleInput, descriptionInput, categorySelect, submitButton } =  getElements();
+
+    await user.type(titleInput, 'New Task');
+    await user.type(descriptionInput, 'Task Description');
+    await user.selectOptions(categorySelect, 'urgent');
+    await user.click(submitButton);
+
+    expect(mockOnSubmit).toHaveBeenCalledWith({
+      title: 'New Task',
+      description: 'Task Description',
+      category: 'urgent',
+    });
+  });
+
+  test('validates required fields', async () => {
+    render(<Form onSubmit={mockOnSubmit} />);
+
+    const { submitButton } = getElements();
+    await user.click(submitButton);
+
+    expect(mockOnSubmit).not.toHaveBeenCalled();
+  });
+
+  test('clears form after successful submission', async () => {
+    render(<Form onSubmit={mockOnSubmit} />);
+    
+    const { titleInput, descriptionInput, categorySelect, submitButton } = getElements();
+  
+    await user.type(titleInput, 'New Task');
+    await user.type(descriptionInput, 'Task Description');
+    await user.selectOptions(categorySelect, 'urgent');
+    await user.click(submitButton);
+  
     expect(titleInput).toHaveValue('');
     expect(descriptionInput).toHaveValue('');
     expect(categorySelect).toHaveValue('');

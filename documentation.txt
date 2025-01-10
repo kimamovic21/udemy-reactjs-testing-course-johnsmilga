@@ -510,3 +510,32 @@ Section 04: Test Driven Development - Focus Flow App
 -kreiramo form element sa dogadajem onSubmit i prop className
 -kreiramo tri div elementa za podatke o naslovu, opisu i kategoriji
 -kreiramo button element sa prop type i className
+
+30. Focus Flow App - Remaining Form Component Tests
+-u komponenti Form.test.tsx pozivamo funkciju test() sa dva argumenta 
+-u funkciji test() prvi argument je opis testa za sljanje forme sa unesenim podacima, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju getElements()
+-vrijednost funkcije getElements() pohranjujemo u destruktuirane varijable const { titleInput, descriptionInput, categorySelect, submitButton }
+-pozivamo funkciju await user.type() za varijablu titleInput
+-pozivamo funkciju user.type() za varijablu descriptionInput
+-pozivamo funkciju await user.selectOptions() za varijablu categorySelect
+-pozivamo funkciju await user.click(submitButton)
+-pozivamo funkciju expect(mockOnSubmit)
+-u komponenti Form.tsx, u funkciju handleSubmit dodajemo funkciju onSubmit()
+-u komponenti Form.test.tsx pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za validaciju obaveznih polja, dok je drugi argument anonimna funkcija
+-u asinhronoj anonimnoj funkciji pozivamo funkciju getElements()
+-vrijednost funkcije getElements() pohranjujemo u destruktuiranu varijablu const { submitButton }
+-pozivamo funkciju await user.click(submitButton)
+-pozivamo funkciju expect(mockOnSubmit).not.toHaveBeenCalled()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za ciscenje svih polja nakon slanja forme, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju render()
+-pozivamo funkciju getElements()
+-vrijednost funkcije getElements() pohranjujemo u destruktuirane varijable const { titleInput, descriptionInput, categorySelect, submitButton }
+-pozivamo funkciju await user.type() za varijablu titleInput
+-pozivamo funkciju user.type() za varijablu descriptionInput
+-pozivamo funkciju await user.selectOptions() za varijablu categorySelect
+-pozivamo funkciju await user.click(submitButton)
+-pozivamo tri funkcije expect()
+-u komponenti Form.tsx, u funkciju handleSubmit dodajemo funkcije setTitle(''), setDescription('') i setCategory('')

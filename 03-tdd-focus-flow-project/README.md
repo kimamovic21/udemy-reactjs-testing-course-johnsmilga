@@ -356,8 +356,8 @@ export default Form;
 // 2. Test submits form with entered values
 test('submits form with entered values', async () => {
   render(<Form onSubmit={mockOnSubmit} />);
-  const { titleInput, descriptionInput, categorySelect, submitButton } =
-    getElements();
+
+  const { titleInput, descriptionInput, categorySelect, submitButton } = getElements();
 
   await user.type(titleInput, 'New Task');
   await user.type(descriptionInput, 'Task Description');
@@ -411,8 +411,7 @@ const handleSubmit = (e: React.FormEvent) => {
 // 4. Test clears form after successful submission
 test('clears form after successful submission', async () => {
   render(<Form onSubmit={mockOnSubmit} />);
-  const { titleInput, descriptionInput, categorySelect, submitButton } =
-    getElements();
+  const { titleInput, descriptionInput, categorySelect, submitButton } = getElements();
 
   await user.type(titleInput, 'New Task');
   await user.type(descriptionInput, 'Task Description');
