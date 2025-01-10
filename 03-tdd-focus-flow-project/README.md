@@ -23,7 +23,9 @@ npm run dev
 
 ## Main Logic
 
-To make things simpler, we’ll start by building the core logic of the application first. Once that’s complete, we’ll move on to writing the tests. This approach will allow you to see the bigger picture of how the application works before diving into the details of test setup.
+- To make things simpler, we’ll start by building the core logic of the application first. 
+- Once that’s complete, we’ll move on to writing the tests. 
+- This approach will allow you to see the bigger picture of how the application works before diving into the details of test setup.
 
 - create `src/utils.ts` file
 
@@ -69,18 +71,40 @@ const Form = () => {
   return <div>Form</div>;
 };
 export default Form;
+
+const List = () => {
+  return <div>List</div>;
+};
+export default List;
+
+const ItemCard = () => {
+  return <div>ItemCard</div>;
+};
+export default ItemCard;
 ```
 
 ## App.tsx
 
 ```tsx
+import { useFlowManager } from './utils';
 import Form from './components/Form';
 import List from './components/List';
-import { useFlowManager } from './utils';
 
-export default function Home() {
+const App = () => {
   const { items, handleAddItem, handleDeleteItem } = useFlowManager();
-}
+
+  return (
+    <main className='container mx-auto p-4 max-w-6xl'>
+      <h1 className='text-3xl font-bold mb-8'>
+        Focus Flow
+      </h1>
+      <Form onSubmit={handleAddItem} />
+      <List items={items} onDelete={handleDeleteItem} />
+    </main>
+  );
+};
+
+export default App;
 ```
 
 In order to fix we need to setup props for the components.
@@ -97,8 +121,8 @@ export default Form;
 ```
 
 ```tsx
+import { type Item } from '../utils';
 import ItemCard from './ItemCard';
-import { Item } from '../utils';
 
 const List = ({
   items,

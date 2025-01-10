@@ -452,3 +452,31 @@ Section 04: Test Driven Development - Focus Flow App
 -preuzmemo starter foldera i fajlove
 -udemo u folder 03-tdd-focus-flow-project i u terminalu ukucamo komandu npm i
 -ukucamo komandu npm run dev
+
+28. Focus Flow App - Code Core Logic
+-u folderu src kreiramo utils.ts fajl
+-u utils.ts fajl importujemo funkciju useState
+-kreiramo i eksportujemo tip ItemCategory
+-kreiramo i eksportujemo tip Item
+-kreiramo i eksportujemo tip ItemWithoutId
+-kreiramo i eksportujemo funkciju useFlowManager()
+-u funkciji useFlowManager() pozivamo funkciju useState<Item[]>([])
+-kreiramo state varijablu const items i set funkciju setItems
+-kreiramo funkcije handleAddItem() i handleDeleteItem()
+-dodajemo izjavu return { items, handleAddItem, handleDeleteItem }
+-u folderu src kreiramo folder components
+-u folderu components kreiramo tsx komponente Form, List i ItemCard
+-u komponentu App.tsx importujemo funkciju useFlowManager, tsx komponente Form i List
+-u funkciji App() pozivamo funkciju useFlowManager()
+-vrijednost funkcije useFlowManager() pohranjujemo u destruktuirane varijable const { items, handleAddItem, handleDeleteItem }
+-u jsx-u kreiramo main element kao roditelj element sa Tailwind CSS klasama
+-u main elementu kreiramo h1 element
+-u main element dodajemo komponente Form i List
+-komponenti Form dodajemo prop onSubmit
+-komponenti List dodajemo prop items i onDelete
+-u komponentu Form.tsx importujemo tipove ItemWithoutId i ItemCategory iz utils.ts fajla
+-funkciji Form() dodajemo parametar destruktuirani prop onSubmit
+-u komponentu List.tsx importujemo tip Item iz utils.ts fajla
+-imporujemo komponentu ItemCard.tsx
+-funkciji List() dodajemo parametre destruktuirane prop items i onDelete
+-parametrima dodajemo tipove
