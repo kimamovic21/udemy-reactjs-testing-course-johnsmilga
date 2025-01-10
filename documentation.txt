@@ -443,3 +443,12 @@ Section 03: React Testing 101: Application Setup and Configuration
 -u funkciji describe() pozivamo funkciju test
 
 Quiz 6: Testing Logic in Project Setup with Vitest and React Testing Library
+
+
+Section 04: Test Driven Development - Focus Flow App
+
+27. Focus Flow App - Intro
+-kreiramo folder 03-tdd-focus-flow-project
+-preuzmemo starter foldera i fajlove
+-udemo u folder 03-tdd-focus-flow-project i u terminalu ukucamo komandu npm i
+-ukucamo komandu npm run dev
