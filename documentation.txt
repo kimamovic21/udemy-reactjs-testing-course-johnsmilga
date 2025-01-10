@@ -441,3 +441,5 @@ Section 03: React Testing 101: Application Setup and Configuration
 -importujemo funkciju Random.tsx
 -pozivamo funkciju describe() sa dva argumenta
 -u funkciji describe() pozivamo funkciju test
+
+Quiz 6: Testing Logic in Project Setup with Vitest and React Testing Library

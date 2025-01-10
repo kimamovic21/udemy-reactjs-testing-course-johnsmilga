@@ -1,0 +1,36 @@
+Quiz 6: Testing Logic in Project Setup with Vitest and React Testing Library
+
+
+Question 1: 
+What is the purpose of screen.getByText in the Random Component test?
+
+Correct answer: 
+It searches for an element containing specific text in the rendered DOM
+
+
+Question 2: 
+Why is cleanup() called after each test in vitest.setup.ts?
+
+Correct answer: 
+To remove any rendered DOM elements and reset the testing environment
+
+
+Question 3:
+What is the purpose of adding @testing-library/jest-dom to the project?
+
+Correct answer: 
+To provide custom matchers for assertions like toBeInTheDocument
+
+
+Question 4:
+4. Why is globals: true added to the test configuration in vite.config.ts?
+
+Correct answer: 
+To make Vitest functions like describe and it globally available without imports
+
+
+Question 5:
+What is the purpose of adding setupFiles in the vite.config.ts test configuration?
+
+Correct answer: 
+To define the path to the setup file where global configurations like cleanup() are defined
