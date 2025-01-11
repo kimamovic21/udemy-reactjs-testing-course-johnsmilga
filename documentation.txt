@@ -589,7 +589,7 @@ Section 04: Test Driven Development - Focus Flow App
 -u anonimnoj funkciji pozivamo funkciju render(<ItemCard {...mockProps} />)
 -pozivamo tri funkcije expect()
 -pozivamo funkciju test() sa dva argumenta
--u funkciji test() prvi argument je opis testa za pozivanje funkcjie onDelete kada se klikne dugme, dok je drugi argument anonimna asinhrona funkcija
+-u funkciji test() prvi argument je opis testa za pozivanje funkcije onDelete kada se klikne dugme, dok je drugi argument anonimna asinhrona funkcija
 -u anonimnoj asinhronoj funkciji kreiramo varijablu const user
 -pozivamo funkciju render(<ItemCard {...mockProps} />)
 -kreiramo varijablu const deleteButton
@@ -598,3 +598,33 @@ Section 04: Test Driven Development - Focus Flow App
 -u komponenti ItemCard.tsx, u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama
 -kreiramo varijablu const categoryColors
 -u jsx-u button elementu dodajemo prop onClick, aria-label i className
+
+33. Focus Flow App - Context API
+-u folderu src kreiramo komponente AppWithContext.tsx i FlowContext.tsx
+-u komponentu FlowContext.tsx importujemo funkcije createContext, useContext, useState i tip ReactNode iz biblioteke React 
+-importujemo tipove Item i ItemWithoutId iz utils.ts fajla
+-kreiramo tip FlowContextType
+-kreiramo varijablu komponentu const FlowContext
+-kreiramo i eksportujemo funkciju FlowProvider() sa parametrom destruktuirani prop children
+-parametru children dodajemo prop ReactNode
+-u funkciji FlowProvider() kreiramo state varijablu const items i set funkciju setItems
+-funkciji useState([]) dodajemo tip <Item[]>
+-kreiramo funkcije handleAddItem() i handleDeleteItem()
+-dodajemo izjavu return 
+-u izjavu return dodajemo komponentu FlowContext.Provider sa otvorenim i zatvorenim tagom
+-komponenti FlowContext.Provider dodajemo prop value
+-u komponentu FlowContext.Provider dodajemo prop {children}
+-kreiramo i eksportujemo funkciju useFlowContext()
+-u funkciji useFlowContext() kreiramo varijablu const context
+-dodajemo uslov if (context === undefined)
+-u uslov if (context === undefined) dodajemo funkciju throw new Error()
+-dodajemo izjavu return context
+-u komponentu main.tsx importujemo komponentu AppWithContext.tsx 
+-importujemo funkciju FlowProvider iz komponente FlowContext.tsx
+-u jsx-u dodajemo komponentu FlowProvider sa otvorenim i zatvorenim tagom
+-u komponentu FlowProvider dodajemo komponentu AppWithContext
+-u komponentu AppWithContext.tsx importujemo funkciju useFlowContext iz komponente FlowContext.tsx
+-importujemo komponente Form.tsx i List.tsx
+-u funkciji AppWithContext() pozivamo funkciju useFlowContext()
+-vrijednost funkcije useFlowContext() pohranjujemo u destruktuirane varijable const { items, handleAddItem, handleDeleteItem }
+-kod u jsx kopiramo iz komponente App.tsx
