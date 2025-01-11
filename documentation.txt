@@ -668,3 +668,5 @@ Section 04: Test Driven Development - Focus Flow App
 -pozivamo funkciju expect(deleteButton).toBeInTheDocument()
 -pozivamo funkciju await user.click(deleteButton)
 -pozivamo dvije funkcije expect()
+
+Practice Test 1: Testing Logic in Focus Flow App

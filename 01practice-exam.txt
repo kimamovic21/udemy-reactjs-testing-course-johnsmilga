@@ -1,0 +1,44 @@
+Practice Test 1: Testing Logic in Focus Flow App
+
+1. In React Testing Library, the method used to find elements that are expected to exist in the DOM is: getByRole.
+
+2. To simulate user interactions like typing or clicking in a test, you should use: userEvent from the @testing-library library.
+
+3. Which of the following are key principles of Test-Driven Development (TDD)? (Select all that apply)
+-Write a failing test before implementing the functionality.
+-Refactor code to improve quality after tests pass.
+
+4. Which of the following are valid ways to assert the absence of an element in the DOM? (Select all that apply)
+-Use queryByRole to check if the element returns null.
+-Use expect(screen.queryByText('Text')).not.toBeInTheDocument().
+
+5. What is the purpose of mockOnSubmit in the Form tests?
+-Validates form submission logic independently of external implementations.
+
+6. How do you verify that the form fields are initially empty in a test?
+-Use toHaveValue('') with screen.getByRole for each form input.
+
+7. Which query method should be used to test for the absence of an added task in the DOM?
+-queryByRole
+
+8. How is the category dropdown tested for correct selection?
+-Use screen.getByRole to verify that the selected option matches the expect value.
+
+9. How can you ensure that the form resets after a successful submission?
+-Check that all input fields have empty values using toHaveValue('').
+
+10. What distinguishes an integration test from a unit test ?
+-Integration tests verify interactions between multiple components, while unit tests focus on individual components in isolation.
+
+11. How do you verify that an item is successfully added to the list?
+-getByText
+
+12. What is the role of FlowProvider in AppWithContext tests?
+-To manage the state and provide context for all components in the app.
+
+13. How do you confirm that the delete functionality works as expected?
+-Click the delete button and verify the item no longer appears in the DOM using queryByText.
+-Ensure the onDelete callback is called with the correct ID.
+
+14. Why is userEvent.setup() used in tests?
+-To simulate realistic user interactions like typing and clicking.
