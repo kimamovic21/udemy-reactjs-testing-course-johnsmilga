@@ -570,3 +570,31 @@ Section 04: Test Driven Development - Focus Flow App
 -u funkciju map() dodajemo komponentu ItemCard sa prop key, {...item} i onDelete
 -pozivamo dvije test funkcije() sa dva argumenta
 -prvi argument je tekst ALTERNATIVE (alternativni testovi za prethoda dva testa), dok je drugi argument anonimna funkcija
+
+32. Focus Flow App - Card Component Tests
+-u komponentu ItemCard.tsx importujemo React ikonicu Trash2 iz paketa Lucide React
+-importujemo tip Item iz utils.ts fajla
+-kreiramo tip ItemCardProps
+-funkciji ItemCard() dodajemo parametre destruktuirane prop sa tipom ItemCardProps
+-u folderu __tests__ kreiramo komponentu ItemCard.test.tsx 
+-u komponentu ItemCard.test.tsx importujemo funkcije iz paketa za testiranje
+-importujemo komponentu ItemCard.tsx
+-imporujemo tip Item iz utils.ts fajla
+-kreiramo tip MockProps
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji kreiramo varijablu objekt const mockProps sa tipom MockProps
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje elemenata sa tacnim sadrzajem, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render(<ItemCard {...mockProps} />)
+-pozivamo tri funkcije expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za pozivanje funkcjie onDelete kada se klikne dugme, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji kreiramo varijablu const user
+-pozivamo funkciju render(<ItemCard {...mockProps} />)
+-kreiramo varijablu const deleteButton
+-pozivamo funkciju await user.click(deleteButton)
+-pozivamo funkciju expect()
+-u komponenti ItemCard.tsx, u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama
+-kreiramo varijablu const categoryColors
+-u jsx-u button elementu dodajemo prop onClick, aria-label i className

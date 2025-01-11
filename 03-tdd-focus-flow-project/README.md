@@ -534,13 +534,21 @@ components/ItemCard.tsx
 
 ```tsx
 import { Trash2 } from 'lucide-react';
+import { type Item } from '../utils';
 
-type ItemCardProps = {
+type ItemCardProps = Item & {
   id: string;
   title: string;
   description: string;
   category: string;
   onDelete: (id: string) => void;
+};
+
+const categoryColors = {
+  urgent: 'bg-red-500',
+  important: 'bg-yellow-500',
+  normal: 'bg-blue-500',
+  low: 'bg-green-500',
 };
 
 const ItemCard = ({
@@ -550,8 +558,11 @@ const ItemCard = ({
   category,
   onDelete,
 }: ItemCardProps) => {
-  return <div>ItemCard</div>;
+  return (
+    <div>ItemCard</div>
+  );
 };
+
 export default ItemCard;
 ```
 
@@ -560,11 +571,13 @@ export default ItemCard;
 ```tsx
 import { describe, test, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { type Item } from '../utils';
 import userEvent from '@testing-library/user-event';
 import ItemCard from '../components/ItemCard';
-import { type Item } from '../utils';
 
-type MockProps = Item & { onDelete: () => void };
+type MockProps = Item & { 
+  onDelete: () => void 
+};
 
 describe('ItemCard', () => {
   const mockProps: MockProps = {
@@ -578,9 +591,7 @@ describe('ItemCard', () => {
   test('renders card with correct content', () => {
     render(<ItemCard {...mockProps} />);
 
-    expect(
-      screen.getByRole('heading', { name: 'Test Task' })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Test Task' })).toBeInTheDocument();
     expect(screen.getByRole('article')).toBeInTheDocument();
     expect(screen.getByText('Test Description')).toBeInTheDocument();
     expect(screen.getByText('urgent')).toBeInTheDocument();
