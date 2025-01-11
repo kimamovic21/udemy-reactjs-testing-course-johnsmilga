@@ -628,3 +628,43 @@ Section 04: Test Driven Development - Focus Flow App
 -u funkciji AppWithContext() pozivamo funkciju useFlowContext()
 -vrijednost funkcije useFlowContext() pohranjujemo u destruktuirane varijable const { items, handleAddItem, handleDeleteItem }
 -kod u jsx kopiramo iz komponente App.tsx
+
+34. Focus Flow App - App Component Integration Tests
+-u folderu __tests__ kreiramo komponentu AppWithContext.test.tsx
+-u komponentu AppWithContext.test.tsx importujemo funkcije i tip za paketa za testiranje
+-importujemo komponentu FlowProvider iz komponente FlowContext.tsx
+-importujemo komponentu AppWithContext.tsx
+-kreiramo funkciju getElements()
+-kreiramo funkciju customRenderAppWithContext()
+-kreiramo asinhronu funkciju addTestItem() sa parametrom user
+-parametru user dodajemo tip UserEvent
+-u funkciji addTestItem() pozivamo funkciju getFormElements()
+-vrijednoscu funkcije getFormElements() pohranjujemo u destruktuirane varijable const { titleInput, descriptionInput, categorySelect, submitButton }
+-pozivamo funkciju await user.type() za varijable titleInput
+-pozivamo funkciju await user.type() za varijablu descriptionInput
+-pozivamo funkciju await user.selectOptions() za varijablu categorySelect
+-pozivamo funkciju await user.click(submitButton)
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testova, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji kreiramo varijablu let user sa tipom UserEvent
+-pozivamo funkciju beforeEach()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje naslova i elemenata iz forme, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju expect()
+-pozivamo funkciju getElements()
+-vrijednost funkcije getElements() pohranjujemo u varijablu const elements
+-pozivamo funkciju Object.values(elements).forEach()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za dodavanje zadatka, dok je drugi argument anonimna asinhrona funkcija
+-u asinhronoj funkciji kreiramo varijablu const cardsBefore
+-pozivamo funkciju expect(cardsBefore).toHaveLength(0)
+-pozivamo funkciju await addTestItem(user)
+-kreiramo varijablu const cardsAfter
+-pozivamo cetiri funkcije expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za brisanje zadatka, dok je drugi argument anonimna asinhrona funkcija
+-u anonimna asinhronoj funkciji pozivamo funkciju await addTestItem(user)
+-kreiramo varijablu const deleteButton
+-pozivamo funkciju expect(deleteButton).toBeInTheDocument()
+-pozivamo funkciju await user.click(deleteButton)
+-pozivamo dvije funkcije expect()

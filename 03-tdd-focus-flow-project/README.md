@@ -752,7 +752,7 @@ import List from './components/List';
 
 const AppWithContext = () => {
   const { items, handleAddItem, handleDeleteItem } = useFlowContext();
-  
+
   return (
     <main className='container mx-auto p-4 max-w-6xl'>
       <h1 className='text-3xl font-bold mb-8'>Focus Flow</h1>
@@ -771,7 +771,7 @@ export default AppWithContext;
 
 ```tsx
 import { render, screen } from '@testing-library/react';
-import userEvent, { UserEvent } from '@testing-library/user-event';
+import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { describe, test, expect, beforeEach, vi } from 'vitest';
 import { FlowProvider } from '../FlowContext';
 import AppWithContext from '../AppWithContext';
@@ -792,8 +792,8 @@ const customRenderAppWithContext = () => {
 };
 
 const addTestItem = async (user: UserEvent) => {
-  const { titleInput, descriptionInput, categorySelect, submitButton } =
-    getElements();
+  const { titleInput, descriptionInput, categorySelect, submitButton } = getElements();
+  
   await user.type(titleInput, 'Test Item');
   await user.type(descriptionInput, 'Test Content');
   await user.selectOptions(categorySelect, 'urgent');
