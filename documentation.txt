@@ -8,6 +8,8 @@ Section 01: Introduction
 02. Discord Channel
 -otvorimo link: https://discord.com/invite/GhUxjr66xz
 
+03. Video Blur Fixed
+
 
 Section 02: React Testing Library Tutorial
 
