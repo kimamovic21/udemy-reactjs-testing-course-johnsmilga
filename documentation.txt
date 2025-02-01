@@ -10,12 +10,14 @@ Section 01: Introduction
 
 03. Video Blur Fixed
 
+04. Course Review
+
 
 Section 02: React Testing Library Tutorial
 
-02. Main Course Repo !!! Important !!!
+05. Main Course Repo !!! Important !!!
 
-03. Install/Setup Course Repository
+06. Install/Setup Course Repository
 -otvorimo link: https://www.npmjs.com/package/@testing-library/react
 -otvorimo web stranicu: https://vite.dev/guide/
 -preuzmemo folder 01-rtl-tutorial sa startnim folderima i fajlovima
@@ -23,27 +25,27 @@ Section 02: React Testing Library Tutorial
 -u jednom terminalu ukucamo komandu npm run dev
 -u drugom terminalu ukucamo komandu npm test
 
-04. Files and Folders
+07. Files and Folders
 
-05. Explore First Test File
+08. Explore First Test File
 -otvorimo App.test.tsx komponentu
 
-06. Test Validation Details
+09. Test Validation Details
 
-07. Vitest Info
+10. Vitest Info
 -otvorimo web stranicu: https://vitest.dev
 
 Quiz 1: React Testing Library Essentials Quiz
 
-08. <SearchByText /> - Component
+11. <SearchByText /> - Component
 -kreiramo folder starter sa tsx komponentama
 -u eslint.config.js fajl dodajemo opciju: '@typescript-eslint/no-unused-vars': 'warn'
 -u komponentu Sandbox.tsx importujemo funkcije useState i useEffect iz biblioteke React
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx
 
-09. SearchByText Methods - Overview
+12. SearchByText Methods - Overview
 
-10. SearchByText Methods - Test File
+13. SearchByText Methods - Test File
 -u folderu tutorial/01-search-by-text kreiramo komponentu Sandbox.test.tsx
 -u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
 -importujemo komponentu Sandbox.tsx
@@ -64,7 +66,7 @@ Quiz 1: React Testing Library Essentials Quiz
 -kreiramo varijablu const asyncMessage
 -pozivamo funkciju expect(asyncMessage).toBeInTheDocument()
 
-11. Test Driven Development Example
+14. Test Driven Development Example
 -u folderu tutorial/02-tdd-example kreiramo komponentu Sandbox.test.tsx
 -u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
 -importujemo komponentu Sandbox.tsx
@@ -79,14 +81,14 @@ Quiz 1: React Testing Library Essentials Quiz
 
 Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 
-12. <SearchByRole /> Component
+15. <SearchByRole /> Component
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/03-search-by-role
 -u komponentu Sandbox.tsx importujemo funkcije useState i useEffect iz biblioteke React
 
-13. SearchByRole Methods Overview
+16. SearchByRole Methods Overview
 -otvorimo link: https://testing-library.com/docs/queries/about
 
-14. SearchByRole Test File
+17. SearchByRole Test File
 -u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
 -importujemo komponentu Sandbox.tsx
 -pozivamo funkciju describe() sa dva argumenta
@@ -123,13 +125,13 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 -kreiramo varijablu const asyncButton
 -pozivamo funkciju expect(asyncButton).toBeInTheDocument()
 
-15. User Interactions Component
+18. User Interactions Component
 -otvorimo link: https://testing-library.com/docs/user-event/intro/#differences-with-fireevent
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/04-user-interactions
 -u komponentu 04-user-interaction/Sandbox.tsx importujemo funkciju useState iz biblioteke React
 -importujemo ikonice FaHeart i FaRegHeart iz paketa React Icons
 
-16. User Interactions - Test File
+19. User Interactions - Test File
 -otvorimo link: https://www.npmjs.com/package/@testing-library/user-event
 -u folderu tutorial/04-user-interactions kreiramo komponentu Sandbox.test.tsx
 -u komponentu Sandbox.test.tsx importujemo funkcije render, screen i fireEvent iz paketa testing-library/react
@@ -141,7 +143,7 @@ Quiz 2: React Testing Library Query Methods and TDD Basics Quiz
 
 Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 
-17. Form Testing - Sandbox
+20. Form Testing - Sandbox
 -otvorimo link: https://www.npmjs.com/package/validator
 -u komponentu App.tsx importujemo komponentu Sandbox iz foldera tutorial/05-form-testing
 -u komponentu Sandbox.tsx importujemo funkcije useState i validator
@@ -164,7 +166,7 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -u uslove if dodajemo izjavu return setError()
 -u funkciji handleSubmit() pozivamo funkciju setSignupInput(defaultState)
 
-18. Test Empty Inputs
+21. Test Empty Inputs
 -kreiramo komponentu Sandbox.test.tsx
 -u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
 -importujemo komponentu Sandbox.tsx
@@ -184,7 +186,7 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -pozivamo funkciju expect(confirmPasswordInputElement).toHaveValue('')
 -u vite.config.js fajlu, u niz exclude dodajemo imena foldera u kojima ne zelimo da se testovi pokrecu
 
-19. Test Typing in The Inputs
+22. Test Typing in The Inputs
 -u komponentu Sandbox.test.tsx importujemo funkciju userEvent iz paketa testing-library/user-event
 -pozivamo funkciju test() sa dva argumenta
 -prvi argument je opis testa za testiranje input elemenata da se mogu unijeti podaci, dok je drugi argument asinhrona anonimna funkcija
@@ -198,7 +200,7 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -pozivamo funkciju await user.type(confirmPasswordInputElement, 'secret')
 -pozivamo funkciju expect(confirmPasswordInputElement).toHaveValue('secret')
 
-20. Refactor
+23. Refactor
 -u komponenti Sandbox.test.tsx kreiramo funkciju getFormElements()
 -u funkciji getFormElements() kreiramo varijablu objekt const elements
 -u objektu elements kreiramo key - value parove emailInputElement, passwordInputElement, confirmPasswordInputElement i submitButton
@@ -215,7 +217,7 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -u funkciji describe() kreiramo varijablu let user sa tipom UserEvent
 -u funkciji beforeEach() redeklarisemo varijablu user sa vrijednoscu userEvent.setup()
 
-21. Form Testing - Remaining Tests
+24. Form Testing - Remaining Tests
 -u komponenti Sandbox.test.tsx pozivamo funkciju test() sa dva argumenta
 -prvi argument je opis testa za prikazivanje poruke greska ako email nije validan, dok je drugi argument anonimna asinhrona funkcija
 -u funkciji test() pozivamo funkciju getFormElements()
@@ -248,7 +250,7 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 
 Quiz 4: Form Testing in React: Best Practices
 
-22. Reviews App - Logic
+25. Reviews App - Logic
 -u komponentu App.tsx importujemo komponentu Sandbox.tsx iz foldera tutorial/06-reviews-app
 -kreiramo komponente Form.tsx i List.tsx
 -u komponentu Sandbox.tsx importujemo funkciju useState, komponente Form.tsx i List.tsx
@@ -294,7 +296,7 @@ Quiz 4: Form Testing in React: Best Practices
 -u elementu article kreiramo dva div elementa
 -kreiramo p element
 
-23. Reviews App - List Component Unit Tests
+26. Reviews App - List Component Unit Tests
 -kreiramo folder __tests__ 
 -u folderu __tests__ kreiramo komponentu List.test.tsx komponentu
 -u komponentu List.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
@@ -323,7 +325,7 @@ Quiz 4: Form Testing in React: Best Practices
 -kreiramo varijablu const stars 
 -pozivamo funkciju expect() za varijablu stars
 
-24. Reviews App - Form Component Unit Tests
+27. Reviews App - Form Component Unit Tests
 -kreiramo komponentu Form.test.tsx
 -u komponentu Form.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
 -importujemo funkciju userEvent iz paketa testing-library/user-event
@@ -370,7 +372,7 @@ Quiz 4: Form Testing in React: Best Practices
 -u funkciju toHaveBeenCalledWith({ }) proslijedujemo objekt sa podacima za vrijednosti email, rating i text
 -pozivamo tri funkcije expect() za varijable emailInput, ratingSelect i textArea
 
-25. Reviews App - Sandbox Component Integration Tests
+28. Reviews App - Sandbox Component Integration Tests
 -kreiramo komponentu Sandbox.test.tsx
 -u komponentu Sandbox.test.tsx importujemo funkcije render i screen iz paketa testing-library/react
 -importujemo funkciju getFormElements iz komponente Form.test.tsx
@@ -413,7 +415,7 @@ Quiz 5: Testing Logic in Reviews App: Components and Integration
 
 Section 03: React Testing 101: Application Setup and Configuration
 
-26. Create and Configure Template for Testing React Applications
+29. Create and Configure Template for Testing React Applications
 -kreiramo folder 02-testing-project-template
 -u terminalu ukucamo komandu npm create vite@latest .
 -udemo u project cd 02-testing-project-template i ukucamo komandu npm i
@@ -452,13 +454,13 @@ Quiz 6: Testing Logic in Project Setup with Vitest and React Testing Library
 
 Section 04: Test Driven Development - Focus Flow App
 
-27. Focus Flow App - Intro
+30. Focus Flow App - Intro
 -kreiramo folder 03-tdd-focus-flow-project
 -preuzmemo starter foldera i fajlove
 -udemo u folder 03-tdd-focus-flow-project i u terminalu ukucamo komandu npm i
 -ukucamo komandu npm run dev
 
-28. Focus Flow App - Code Core Logic
+31. Focus Flow App - Code Core Logic
 -u folderu src kreiramo utils.ts fajl
 -u utils.ts fajl importujemo funkciju useState
 -kreiramo i eksportujemo tip ItemCategory
@@ -486,7 +488,7 @@ Section 04: Test Driven Development - Focus Flow App
 -funkciji List() dodajemo parametre destruktuirane prop items i onDelete
 -parametrima dodajemo tipove
 
-29. Focus Flow App - First Form Component Test
+32. Focus Flow App - First Form Component Test
 -u folderu src kreiramo folder __tests__ i komponentu Form.test.tsx
 -u komponentu Form.test.tsx importujemo funkcije i tipove iz paketa za testiranje
 -kreiramo funkciju getFormElements()
@@ -516,7 +518,7 @@ Section 04: Test Driven Development - Focus Flow App
 -kreiramo tri div elementa za podatke o naslovu, opisu i kategoriji
 -kreiramo button element sa prop type i className
 
-30. Focus Flow App - Remaining Form Component Tests
+33. Focus Flow App - Remaining Form Component Tests
 -u komponenti Form.test.tsx pozivamo funkciju test() sa dva argumenta 
 -u funkciji test() prvi argument je opis testa za sljanje forme sa unesenim podacima, dok je drugi argument anonimna asinhrona funkcija
 -u anonimnoj asinhronoj funkciji pozivamo funkciju getElements()
@@ -545,7 +547,7 @@ Section 04: Test Driven Development - Focus Flow App
 -pozivamo tri funkcije expect()
 -u komponenti Form.tsx, u funkciju handleSubmit dodajemo funkcije setTitle(''), setDescription('') i setCategory('')
 
-31. Focus Flow App - List Component Tests
+34. Focus Flow App - List Component Tests
 -u folderu __tests__ kreiramo komponentu List.test.txt
 -u komponentu List.test.tsx importujemo funkcije iz paketa za testiranje
 -importujemo komponentu List.tsx
@@ -576,7 +578,7 @@ Section 04: Test Driven Development - Focus Flow App
 -pozivamo dvije test funkcije() sa dva argumenta
 -prvi argument je tekst ALTERNATIVE (alternativni testovi za prethoda dva testa), dok je drugi argument anonimna funkcija
 
-32. Focus Flow App - Card Component Tests
+35. Focus Flow App - Card Component Tests
 -u komponentu ItemCard.tsx importujemo React ikonicu Trash2 iz paketa Lucide React
 -importujemo tip Item iz utils.ts fajla
 -kreiramo tip ItemCardProps
@@ -604,7 +606,7 @@ Section 04: Test Driven Development - Focus Flow App
 -kreiramo varijablu const categoryColors
 -u jsx-u button elementu dodajemo prop onClick, aria-label i className
 
-33. Focus Flow App - Context API
+36. Focus Flow App - Context API
 -u folderu src kreiramo komponente AppWithContext.tsx i FlowContext.tsx
 -u komponentu FlowContext.tsx importujemo funkcije createContext, useContext, useState i tip ReactNode iz biblioteke React 
 -importujemo tipove Item i ItemWithoutId iz utils.ts fajla
@@ -634,7 +636,7 @@ Section 04: Test Driven Development - Focus Flow App
 -vrijednost funkcije useFlowContext() pohranjujemo u destruktuirane varijable const { items, handleAddItem, handleDeleteItem }
 -kod u jsx kopiramo iz komponente App.tsx
 
-34. Focus Flow App - App Component Integration Tests
+37. Focus Flow App - App Component Integration Tests
 -u folderu __tests__ kreiramo komponentu AppWithContext.test.tsx
 -u komponentu AppWithContext.test.tsx importujemo funkcije i tip za paketa za testiranje
 -importujemo komponentu FlowProvider iz komponente FlowContext.tsx
