@@ -5,6 +5,9 @@ Section 01: Introduction
 
 01. Course Info
 
+02. Discord Channel
+-otvorimo link: https://discord.com/invite/GhUxjr66xz
+
 
 Section 02: React Testing Library Tutorial
 
