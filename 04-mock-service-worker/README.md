@@ -222,9 +222,9 @@ src/App.tsx
 
 ```tsx
 import { useEffect } from 'react';
+import { usePosts } from './hooks/usePosts';
 import Form from './components/Form';
 import List from './components/List';
-import { usePosts } from './hooks/usePosts';
 
 function App() {
   const {
@@ -299,7 +299,7 @@ function Form({ onSubmit }: FormProps) {
       </button>
     </form>
   );
-}
+};
 
 export default Form;
 ```
@@ -318,15 +318,15 @@ type ListProps = {
   onDelete: (postId: string) => Promise<void>;
 };
 
-function List({ posts, onLike, onDelete }: ListProps) {
+const List = ({ posts, onLike, onDelete }: ListProps) => {
   return (
     <div className='space-y-4'>
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <Item key={post.id} post={post} onLike={onLike} onDelete={onDelete} />
       ))}
     </div>
   );
-}
+};
 
 export default List;
 ```

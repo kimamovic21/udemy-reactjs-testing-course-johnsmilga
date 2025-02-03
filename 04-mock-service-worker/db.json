@@ -9,6 +9,11 @@
       "id": "2",
       "title": "node ts course",
       "likes": 8
+    },
+    {
+      "id": "a0b6",
+      "title": "nextjs",
+      "likes": 1
     }
   ]
 }

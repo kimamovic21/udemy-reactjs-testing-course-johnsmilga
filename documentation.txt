@@ -741,3 +741,51 @@ Section 05: Mock Service Worker - Mocking API's
 -u bloku koda try pozivamo funkcije await axios.delete(), await fetchPosts() i setError('')
 -u bloku koda catch (err) ispisujemo poruku err u konzoli i pozivamo funkciju setError()
 -u funkciju usePosts() dodajemo izjavu objekt return { posts, error, fetchPosts, handleCreatePost, handleLike, handleDelete }
+
+41. MSW - Front End
+-u folderu src kreiramo folder components i komponente Form.tsx, List.tsx i Itemt.tsx
+-u komponentu App.tsx importujemo funkciju useEffect iz paketa react
+-importujemo funkciju usePosts iz usePosts.ts
+-importujemo komponente Form.tsx i List.tsx
+-u funkciji App() pozivamo funkciju usePosts()
+-vrijednost funkcije usePosts() pohranjujemo u destruktuirane varijable i funkcije
+-pozivamo funkciju useEffect() sa dva argumenta
+-u funkciji useEffect() prvi argument je anonimna funkcija, dok je drugi argument prazan niz
+-u anonimnoj funkciji pozivamo funkciju fetchPosts()
+-u jsx-u dodajemo roditelj div elementu Tailwind CSS klase
+-u div elementu h1 elementu dodajemo Tailwind CSS klase
+-dodajemo uslov za kondicionalno renderovanje error &&
+-dodajemo komponentu Form sa prop onSubmit
+-dodajemo komponentu List sa prop posts, onLike i onDelete
+-u komponentu Form.tsx importujemo funkcije useState, FormEvent i ChangeEvent iz paketa react
+-kreiramo tip FormProps
+-funkciji Form() dodajemo parametar destruktuirani prop onSubmit sa tipom FormProps
+-u funkciji Form() pozivamo funkciju useState('')
+-vrijednost funkciji useState('') pohranjujemo u varijable const [title, setTitle]
+-kreiramo funkciju handleSubmit() sa parametrom e
+-parametru e dodajemo tip FormEvent<HTMLFormElement> 
+-u funkciji handleSubmit() pozivamo funkcije e.preventDefault(), onSubmit() i setTitle()
+-kreiramo funkciju handleChange() sa parametrom e
+-parametru e dodajemo tip ChangeEvent<HTMLInputElement>
+-u jsx-u kreiramo form element kao roditelj element
+-form elementu dodajemo dogadaj onSubmit i prop className
+-u dogadaj onSubmit proslijedujemo funkciju handleSubmit
+-u form elementu kreiramo label element sa prop htmlFor i className
+-kreiramo input element sa prop type, id, value, onChange, placeholder, className i required
+-kreiramo button element sa prop type i className
+-u komponentu List.tsx importujemo komponentu Item.tsx
+-importujemo tip Post iz usePosts.ts fajla
+-kreiramo tip ListProps
+-funkciji List() dodajemo parametre destruktuirane prop posts, onLike i onDelete sa tipom ListProps
+-u roditelj div element dodajemo metodu posts?.map()
+-u funkciju map() dodajemo komponentu Item sa prop key, post, onLike i onDelete
+-u komponentu Item.tsx importujemo tip Post iz usePosts.ts fajla
+-kreiramo tip ItemProps
+-funkciji Post() dodajemo parametar destruktuirane prop post, onLike i onDelete sa tipom ItemProps
+-u jsx-u kreiramo article element kao roditelj element sa prop key i className
+-u article elementu kreiramo h3 element sa prop className
+-kreiramo div element sa Tailwind CSS flex klasama
+-u div elementu sa Tailwind CSS flex klasama kreiramo elemente div i button
+-u div elementu kreiramo button element
+-button elementima dodajemo prop onClick i className
+-otvorimo aplikaciju u pretrazivacu i kreiramo objavu
