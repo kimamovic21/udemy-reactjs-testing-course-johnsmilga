@@ -1,17 +1,22 @@
 # Mock Service Worker
 
-Let's continue our journey by building a posts manager app where we'll not only test our current knowledge but also learn how to use Mock Service Worker to mock our API requests. Yes, this project will include HTTP requests!
+- Let's continue our journey by building a posts manager app where we'll not only test our current knowledge but also learn how to use 
+  Mock Service Worker to mock our API requests. 
+- Yes, this project will include HTTP requests!
 
-For the core functionality, we'll create a form to create posts, a list to display them, and each post will have like and delete buttons.
+- For the core functionality, we'll create a form to create posts, a list to display them, and each post will have like and delete buttons.
 
 This project has two starting points, so let's discuss the options:
 
 1. If you want to build the entire project from scratch, including the front-end, start with the `01-starter` folder.
-2. If you're only interested in the testing challenges and Mock Service Worker implementation, use the `02-front-end` folder which comes with the front-end already implemented.
+2. If you're only interested in the testing challenges and Mock Service Worker implementation, use the `02-front-end` folder which comes with 
+  the front-end already implemented.
 
-I recommend watching the setup videos to understand how to configure the server for HTTP requests, though you can always adjust the video speed to skip familiar content.
+- I recommend watching the setup videos to understand how to configure the server for HTTP requests, though you can always adjust the video 
+  speed to skip familiar content.
 
-The `03-final` folder contains the complete project with Mock Service Worker implemented, which you can use as a reference. Now that we understand our options, let's begin - I'll be starting with the `01-starter` folder.
+- The `03-final` folder contains the complete project with Mock Service Worker implemented, which you can use as a reference. 
+- Now that we understand our options, let's begin - I'll be starting with the `01-starter` folder.
 
 ## JSON Server
 
@@ -27,7 +32,8 @@ create a db.json file
 db.json
 
 ```json
-"posts": [
+{
+  "posts": [
     {
       "id": "1",
       "title": "testing library",
@@ -39,6 +45,7 @@ db.json
       "likes": 8
     }
   ]
+}
 ```
 
 default port is 3000

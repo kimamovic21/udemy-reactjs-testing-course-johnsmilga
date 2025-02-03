@@ -684,3 +684,15 @@ Section 05: Mock Service Worker - Mocking API's
 38. MSW - Intro
 -kreiramo folder 04-mock-service-worker
 -u folder 04-mock-service-worker dodajemo start foldere i fajlove potrebne za projekt
+
+39. MSW - JSON Web Server and HTTP Requests
+-otvorimo link: https://www.npmjs.com/package/json-server
+-u terminalu instaliramo paket JSON Server sa komandom npm i json-server
+-kreiramo db.json fajl
+-u db.json fajlu kreiramo niz posts
+-u package.json fajl dodajemo komandu: npx json-server db.json --port 4000
+-u terminalu ukucamo komandu npm run server
+-u pretrazivacu otvorimo rutu: http://localhost:4000/posts
+-instaliramo VS Code ekstenziju REST Client
+-kreiramo posts.http fajl
+-u posts.http fajlu kreiramo vise HTTP zahtjeva
