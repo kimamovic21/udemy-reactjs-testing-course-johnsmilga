@@ -215,13 +215,13 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -u funkciji describe() pozivamo funkciju beforeEach()
 -importujemo tip UserEvent iz paketa testing-library/user-event
 -u funkciji describe() kreiramo varijablu let user sa tipom UserEvent
--u funkciji beforeEach() redeklarisemo varijablu user sa vrijednoscu userEvent.setup()
+-u funkciji beforeEach() redeklarisemo varijablu user sa userEvent.setup()
 
 24. Form Testing - Remaining Tests
 -u komponenti Sandbox.test.tsx pozivamo funkciju test() sa dva argumenta
 -prvi argument je opis testa za prikazivanje poruke greska ako email nije validan, dok je drugi argument anonimna asinhrona funkcija
 -u funkciji test() pozivamo funkciju getFormElements()
--vrijednoscu funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInputElement, submitButton }
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInputElement, submitButton }
 -pozivamo funkciju expect()
 -pozivamo funkciju await user.type(emailInputElement, 'invalid')
 -pozivamo funkciju await user.click(submitButton)
@@ -229,7 +229,7 @@ Quiz 3: React Testing Library: Search By Role and User Interactions Quiz
 -pozivamo funkciju test()
 -prvi argument je opis testa za prikazivanje poruke greska ako sifra nije validna, dok je drugi argument anonimna asinhrona funkcija
 -u funkciji test() pozivamo funkciju getFormElements()
--vrijednoscu funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInputElement, passwordInputElement, submitButton }
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { emailInputElement, passwordInputElement, submitButton }
 -pozivamo funkciju expect()
 -pozivamo dvije funkcije await user.type() i jednu funkciju await user.click()
 -pozivamo funkciju expect()
@@ -646,7 +646,7 @@ Section 04: Test Driven Development - Focus Flow App
 -kreiramo asinhronu funkciju addTestItem() sa parametrom user
 -parametru user dodajemo tip UserEvent
 -u funkciji addTestItem() pozivamo funkciju getFormElements()
--vrijednoscu funkcije getFormElements() pohranjujemo u destruktuirane varijable const { titleInput, descriptionInput, categorySelect, submitButton }
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { titleInput, descriptionInput, categorySelect, submitButton }
 -pozivamo funkciju await user.type() za varijable titleInput
 -pozivamo funkciju await user.type() za varijablu descriptionInput
 -pozivamo funkciju await user.selectOptions() za varijablu categorySelect
@@ -696,3 +696,48 @@ Section 05: Mock Service Worker - Mocking API's
 -instaliramo VS Code ekstenziju REST Client
 -kreiramo posts.http fajl
 -u posts.http fajlu kreiramo vise HTTP zahtjeva
+
+40. MSW - Main Logic
+-otvorimo link: https://www.npmjs.com/package/axios
+-u terminalu instaliramo paket Axios sa komandom: npx i axios
+-u folderu src kreiramo folder hooks
+-u folderu hooks kreiramo usePosts.ts fajl
+-u usePosts.ts fajl importujemo funkciju useState iz paketa react
+-importujemo instancu axios iz paketa axios
+-kreiramo i eksportujemo tip Post
+-kreiramo i eksportujemo tip PostWithoutId
+-kreiramo varijablu const API_URL
+-kreiramo i eksportujemo funkciju usePosts()
+-u funkciji usePosts() pozivamo dvije funkcije useState() sa tipovima Post[] i String
+-vrijednost prve funkcije useState() pohranjujemo u varijable const [posts, setPosts] 
+-vrijednost druge funkcije useState() pohranjujemo u varijable const [error, setError]
+-kreiramo asinhronu funkciju fetchPosts() sa tipom Promise<void>
+-funkciji fetchPosts() dodajemo blokove koda try - catch
+-u bloku koda try pozivamo funkciju await axios.get<Post[]>(API_URL)
+-vrijednost funkcije axios.get() pohranjujemo u destruktuiranu varijablu const { data }
+-pozivamo funkcije setPosts(data) i setError()
+-u bloku koda catch (err) ispisujemo poruku err u konzoli i pozivamo funkciju setError()
+-kreiramo asinhronu funkciju handleCreatePost() sa parametrom postData()
+-parametru postData dodajemo tip PostWithoutId
+-funkciji handleCreatePost() dodajemo tip Promise<vodi>
+-u funkciji handleCreatePost() dodajemo blokove koda try i catch
+-u bloku koda try pozivamo funkciju await axios.post()
+-pozivamo funkcije await fetchPosts() i setError('')
+-u bloku koda catch (err) ispisujemo poruku err u konzoli i pozivamo funkciju setError()
+-kreiramo asinhronu funkciju handleLike() sa parametrom postId
+-parametru postId dodajemo tip string
+-funkciji handleLike() dodajemo tip Promise<void>
+-u funkciju handleLike() dodajemo blokove koda try i catch
+-u bloku koda try kreiramo varijablu const post
+-dodajemo uslov if (!post)
+-u uslov if (!post) pozivamo funkciju setError() i dodajemo izjavu return
+-nakon uslova if pozivamo funkciju await axios.put()
+-pozivamo funkcije await fetchPosts() i setError('')
+-u bloku koda catch (err) ispisujemo poruku err u konzoli i pozivamo funkciju setError()
+-kreiramo asinhronu funkciju handleDelete() sa parametrom postId
+-parametru postId dodajemo tip string
+-funkciji handleDelete() dodajemo tip Promise<void>
+-u funkciju handleDelete() dodajemo blokove koda try - catch
+-u bloku koda try pozivamo funkcije await axios.delete(), await fetchPosts() i setError('')
+-u bloku koda catch (err) ispisujemo poruku err u konzoli i pozivamo funkciju setError()
+-u funkciju usePosts() dodajemo izjavu objekt return { posts, error, fetchPosts, handleCreatePost, handleLike, handleDelete }
