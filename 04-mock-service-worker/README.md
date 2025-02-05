@@ -376,14 +376,16 @@ export default Item;
 
 ## Form Tests
 
-And once we have a working application, let's work on our tests.
-If you did not build the project from scratch, please get a hold of the `02-front-end` folder and run:
+- And once we have a working application, let's work on our tests.
+- If you did not build the project from scratch, please get a hold of the `02-front-end` folder and run:
 
 - `npm install` to install dependencies
 - `npm run server` to start the JSON Server
 - `npm run dev` to start the React application
 
-Also, this is a good opportunity to practice your current knowledge. Below you can find a list of steps that you can follow to create the tests for all three components. Form, List and Item. If you are interested in such challenge, pause the video and give it a try.
+- Also, this is a good opportunity to practice your current knowledge. 
+- Below you can find a list of steps that you can follow to create the tests for all three components: Form, List and Item. 
+- If you are interested in such challenge, pause the video and give it a try.
 
 - create `src/__tests__/Form.test.tsx` file
 

@@ -484,7 +484,7 @@ Section 04: Test Driven Development - Focus Flow App
 -u komponentu Form.tsx importujemo tipove ItemWithoutId i ItemCategory iz utils.ts fajla
 -funkciji Form() dodajemo parametar destruktuirani prop onSubmit
 -u komponentu List.tsx importujemo tip Item iz utils.ts fajla
--imporujemo komponentu ItemCard.tsx
+-importujemo komponentu ItemCard.tsx
 -funkciji List() dodajemo parametre destruktuirane prop items i onDelete
 -parametrima dodajemo tipove
 
@@ -551,7 +551,7 @@ Section 04: Test Driven Development - Focus Flow App
 -u folderu __tests__ kreiramo komponentu List.test.txt
 -u komponentu List.test.tsx importujemo funkcije iz paketa za testiranje
 -importujemo komponentu List.tsx
--imporujemo tip Item iz utils.ts fajla
+-importujemo tip Item iz utils.ts fajla
 -pozivamo funkciju describe() sa dva argumenta
 -u funkciji describe() prvi argument je opis testova, dok je drugi argument anonimna funkcija
 -u anonimnoj funkciji kreiramo varijablu niz const mockItems sa tipom Item[]
@@ -586,7 +586,7 @@ Section 04: Test Driven Development - Focus Flow App
 -u folderu __tests__ kreiramo komponentu ItemCard.test.tsx 
 -u komponentu ItemCard.test.tsx importujemo funkcije iz paketa za testiranje
 -importujemo komponentu ItemCard.tsx
--imporujemo tip Item iz utils.ts fajla
+-importujemo tip Item iz utils.ts fajla
 -kreiramo tip MockProps
 -pozivamo funkciju describe() sa dva argumenta
 -u funkciji describe() prvi argument je opis testova, dok je drugi argument anonimna funkcija
@@ -789,3 +789,28 @@ Section 05: Mock Service Worker - Mocking API's
 -u div elementu kreiramo button element
 -button elementima dodajemo prop onClick i className
 -otvorimo aplikaciju u pretrazivacu i kreiramo objavu
+
+42. MSW - Form, List and Item Unit Tests
+-u folderu src kreiramo folder __tests__
+-u folderu __tests__ kreiramo komponentu Form.test.tsx
+-u komponentu Form.test.tsx importujemo paket @testing-library/jest-dom
+-importujemo funkcije render i screen iz paketa testing-library/react
+-importujemo funkciju userEvent i tip UserEvent iz paketa testing-library/user-event
+-importujemo funkcije describe, test, expect, beforeEach i vi iz paketa vitest
+-importujemo komponentu Form iz komponente Form.tsx
+-kreiramo i eksportujemo funkciji getFormElements()
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testa, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju vi.fn()
+-vrijednost funkcije vi.fn() pohranjujemo u varijablu const mockOnSubmit
+-kreiramo varijablu let user sa tipom UserEvent
+-pozivamo funkciju beforeEach()
+-u funkciji beforeEach() pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju mockOnSubmit.mockClear()
+-pozivamo funkciju render()
+-nakon funkcije beforeEach() pozivamo vise funkcija test()
+-u folderu __tests__ kreiramo komponentu List.test.tsx
+-ponovimo slican postupak pisanja testova u komponenti List.test.tsx
+-u folderu __tests__ kreiramo komponentu Item.test.tsx
+-ponovimo slican postupak pisanja testova u komponenti Item.test.tsx
