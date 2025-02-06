@@ -915,3 +915,56 @@ Section 05: Mock Service Worker - Mocking API's
 -pozivamo funkciju await screen.findAllByRole()
 -vrijednost funkcije await screen.findAllByRole() pohranjujemo u varijablu const postsAfterDelete
 -pozivamo funkciju expect()
+
+46. MSW - Mock HTTP Error Responses
+-u handlers.ts fajlu kreiramo i eksportujemo varijablu niz getErrorHandler
+-u nizu getErrorHandler pozivamo funkciju http.get() sa dva argumenta
+-u funkciji get() prvi argument je varijabla url, dok je drugi argument anonimna funkcija
+-u anonimnu funkciju dodajemo izjavu return HttpResponse.json()
+-funkciji json() dodajemo dva objekt argumenta
+-prvi argument je poruka, dok je drugi argument status koda
+-kreiramo i eksportujemo varijable nizove createErrorHandler, updateErrorHandler i deleteErrorHandler
+-u kreiranim nizovima ponovimo slican postupak kao u nizu getErrorHandler
+-u komponentu App.test.tsx importujemo nizove getErrorHandler, createErrorHandler, updateErrorHandler i deleteErrorHandler iz handlers.ts fajla
+-u komponenti App.tsx pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je poruka za prikazivanje poruke greska ako je doslo do problema prilikom dohvacanja objava
+-drugi argument u funkciji test() je anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju server.use(...getErrorHandler)
+-pozivamo funkciju render()
+-pozivamo funkciju expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je poruka za prikazivanje poruke greska ako je doslo do problema prilikom kreiranja objave
+-drugi argument u funkciji test() je anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju server.use(...createErrorHandler)
+-pozivamo funkciju render()
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { input, submitBtn }
+-pozivamo funkcije await user.type() i await user.click()
+-pozivamo funkciju expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je poruka za prikazivanje poruke greska ako je doslo do problema prilikom izmjene objave
+-drugi argument u funkciji test() je anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju server.use(...updateErrorHandler)
+-pozivamo funkciju render()
+-pozivamo funkciju await screen.findByRole()
+-vrijednost funkcije await screen.findByRole() pohranjujemo u varijablu const const likeBtn
+-pozivamo funkciju await user.click()
+-pozivamo funkciju expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je poruka za prikazivanje poruke greska ako je doslo do problema prilikom brisanja objave
+-drugi argument u funkciji test() je anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju server.use(...deleteErrorHandler)
+-pozivamo funkciju render()
+-pozivamo funkciju await screen.findAllByRole()
+-vrijednost funkcije screen.findAllByRole() pohranjujemo u varijablu const allPosts
+-kreiramo varijablu const firstPost
+-pozivamo funkciju within()
+-vrijednost funkcije within() pohranjujemo u varijablu const deleteBtn
+-pozivamo funkciju await user.click()
+-pozivamo funkciju expect()

@@ -942,13 +942,14 @@ import {
 } from './mocks/handlers';
 
 describe('App', () => {
+   // Existing tests...
   test('shows error message when fetching posts fails', async () => {
-    // By default, the server is configured to return the mock data.   To test how the application handles errors, we need to explicitly configure the server to simulate a failure. This is done using the line server.use(...errorHandler);
+    // By default, the server is configured to return the mock data. 
+    // To test how the application handles errors, we need to explicitly configure the server to simulate a failure. 
+    // This is done using the line server.use(...errorHandler);
     server.use(...getErrorHandler);
     render(<App />);
-    expect(
-      await screen.findByText(/failed to fetch posts/i)
-    ).toBeInTheDocument();
+    expect(await screen.findByText(/failed to fetch posts/i)).toBeInTheDocument();
   });
   test('shows error message when creating a post fails', async () => {
     const user = userEvent.setup();
@@ -958,9 +959,7 @@ describe('App', () => {
     await user.type(input, 'New Post');
     await user.click(submitBtn);
     // verify error message is shown
-    expect(
-      await screen.findByText(/failed to create post/i)
-    ).toBeInTheDocument();
+    expect(await screen.findByText(/failed to create post/i)).toBeInTheDocument();
   });
   test('displays error message when updating post fails', async () => {
     const user = userEvent.setup();
@@ -985,9 +984,7 @@ describe('App', () => {
 
     await user.click(deleteBtn);
 
-    expect(
-      await screen.findByText(/failed to delete post/i)
-    ).toBeInTheDocument();
+    expect(await screen.findByText(/failed to delete post/i)).toBeInTheDocument();
   });
 });
 ```
