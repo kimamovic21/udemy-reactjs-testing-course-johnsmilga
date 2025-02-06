@@ -849,6 +849,7 @@ src/App.test.tsx
 
 ```tsx
 describe('App', () => {
+  // Existing tests...
   test('creates a new post', async () => {
     const user = userEvent.setup();
     render(<App />);
@@ -875,7 +876,8 @@ describe('App', () => {
     expect(initialPosts).toHaveLength(3);
     const lastPost = initialPosts[2];
 
-    // The within method is a utility provided by the @testing-library/react package. It allows you to scope your queries to a specific DOM element, rather than searching the entire document.
+    // The within method is a utility provided by the @testing-library/react package. 
+    // It allows you to scope your queries to a specific DOM element, rather than searching the entire document.
 
     const deleteBtn = within(lastPost).getByRole('button', {
       name: /delete/i,

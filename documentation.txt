@@ -853,3 +853,65 @@ Section 05: Mock Service Worker - Mocking API's
 -pozivamo jos jednu funkciju test() sa dva argumenta
 -u anonimnoj funkciji prvi argument je opis testa za dohvacanje objava, dok je drugi argument anonimna asinhrona funkcija
 -u anonimnoj asinhronoj funkciji pozivamo funkciju render() i dvije funkcije expect()
+
+45. MSW - Mock Remaining Requests
+-u handlers.ts fajlu, u nizu handlers pozivamo funkciju http.post()
+-funkciji post() dodajemo dva argumenta
+-prvi argument u funkciji post() je varijabla url, dok je drugi argument anonimna asinhrona funkcija
+-anonimnoj asinhronoj funkciji dodajemo destruktuirani parametar request
+-u anonimnoj funkciji pozivamo funkciju await request.json() as Post
+-vrijednost funkcije await request.json() pohranjujemo u varijablu const newPost
+-u varijabli newPost varijabli id dodajemo vrijednost Date.now().toString()
+-pozivamo funkciju posts.push(newPost)
+-dodajemo izjavu return HttpResponse.json()
+-pozivamo funkciju http.put()
+-funkciji put() dodajemo dva argumenta
+-prvi argument u funkciji put() je dinamicka varijabla url sa id-em, dok je drugi argument anonimna asinhrona funkcija
+-anonimnoj asinhronoj funkciji dodajemo destruktuirane parametre params i request
+-u anonimnoj funkciji destruktuiramo varijablu const { id } iz varijable params
+-pozivamo funkciju await request.json() as Post
+-vrijednost metode await request.json() pohranjujemo u varijablu const updatedPost
+-kreiramo varijablu const index
+-redeklarisemo varijablu posts[index] = updatedPost
+-dodajemo izjavu return HttpResponse.json()
+-pozivamo funkciju http.delete()
+-funkciji delete() dodajemo dva argumenta
+-prvi argument u funkciji delete() je dinamicka varijabla url sa id-em, dok je drugi argument anonimna asinhrona funkcija
+-anonimnoj asinhronoj funkciji dodajemo destruktuirani parametar params
+-u anonimnoj funkciji destruktuiramo varijablu const { id } iz varijable params
+-pozivamo funkciju posts.filter()
+-vrijednost funkcije posts.filter() redeklarisemo u varijablu niz posts
+-dodajemo izjavu return HttpResponse.json()
+-u komponenti App.test.tsx pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za kreiranje nove objave, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju render()
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { input, submitBtn }
+-pozivamo funkcije await user.type() i await user.click()
+-pozivamo funkciju expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za izmjenu objave, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju render()
+-pozivamo funkciju await screen.findByRole()
+-vrijednost funkcije await screen.findByRole() pohranjujemo u varijablu const likeBtn
+-pozivamo funkciju await user.click(likeBtn)
+-pozivamo funkciju expect()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za brisanje objave, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju render()
+-pozivamo funkciju await screen.findAllByRole()
+-vrijednost funkcije await screen.findAllByRole() pohranjujemo u varijablu const initialPosts
+-pozivamo funkciju expect()
+-kreiramo varijablu const lastPost
+-pozivamo funkciju within()
+-vrijednost funkcije within() pohranjujemo u varijablu const deleteBtn
+-pozivamo funkciju await user.click(deleteBtn)
+-pozivamo funkciju await screen.findAllByRole()
+-vrijednost funkcije await screen.findAllByRole() pohranjujemo u varijablu const postsAfterDelete
+-pozivamo funkciju expect()
