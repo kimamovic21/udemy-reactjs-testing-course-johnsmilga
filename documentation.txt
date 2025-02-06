@@ -814,3 +814,5 @@ Section 05: Mock Service Worker - Mocking API's
 -ponovimo slican postupak pisanja testova u komponenti List.test.tsx
 -u folderu __tests__ kreiramo komponentu Item.test.tsx
 -ponovimo slican postupak pisanja testova u komponenti Item.test.tsx
+
+43. MSW - Info

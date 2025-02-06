@@ -15,8 +15,9 @@ const mockPost: Post = {
 const mockOnDelete = vi.fn();
 const mockOnLike = vi.fn();
 
-describe('Item', () => {
+describe('Item Component', () => {
   let user: UserEvent;
+
   beforeEach(() => {
     user = userEvent.setup();
     vi.clearAllMocks();
@@ -28,6 +29,7 @@ describe('Item', () => {
       />
     );
   });
+  
   test('renders post title correctly', () => {
     expect(screen.getByText('testing library')).toBeInTheDocument();
   });

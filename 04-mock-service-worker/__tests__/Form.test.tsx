@@ -34,7 +34,6 @@ describe('Form', () => {
   test('requires title input before submission', async () => {
     const { submitBtn } = getFormElements();
     await user.click(submitBtn);
-
     expect(mockOnSubmit).not.toHaveBeenCalled();
   });
   test('submits the form with correct data', async () => {
