@@ -18,6 +18,8 @@ export const usePosts = () => {
   const fetchPosts = async (): Promise<void> => {
     try {
       const { data } = await axios.get<Post[]>(API_URL);
+      // console.log(data);
+
       setPosts(data);
       setError('');
     } catch (err) {

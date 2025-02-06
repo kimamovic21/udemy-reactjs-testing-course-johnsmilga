@@ -695,13 +695,13 @@ src/mocks/handlers.ts
 ```ts
 // Import necessary utilities from MSW and our Post type
 import { http, HttpResponse } from 'msw';
-import { Post } from '../hooks/usePosts';
+import { type Post } from '../hooks/usePosts';
 
 // Define the API endpoint we want to mock
 const url = 'http://localhost:4000/posts';
 
 // Create mock data that will be used as our "database"
-export let posts: Post[] = [
+export const posts: Post[] = [
   {
     id: '1',
     title: 'First Post',
@@ -791,7 +791,7 @@ describe('App', () => {
 
 src/hooks/usePosts.ts
 
-if you don't believe me that the data is fetched from the mock, you can check the console log in the `usePosts` hook
+- If you don't believe me that the data is fetched from the mock, you can check the console log in the `usePosts` hook
 
 ```ts
 const { data } = await axios.get<Post[]>(API_URL);

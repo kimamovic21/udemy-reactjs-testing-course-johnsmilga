@@ -816,3 +816,40 @@ Section 05: Mock Service Worker - Mocking API's
 -ponovimo slican postupak pisanja testova u komponenti Item.test.tsx
 
 43. MSW - Info
+
+44. MSW - Mock Fetch Posts
+-otvorimo link: https://www.npmjs.com/package/msw
+-u terminalu ukucamo komandu: npm i msw
+-u folderu src kreiramo folder mocks i handlers.ts fajl
+-u handlers.ts fajl importujemo funkcije http i HttpResponse iz paketa msw
+-importujemo tip Post iz usePosts.ts fajla
+-kreiramo varijablu const url
+-kreiramo i eksportujemo varijablu niz const posts sa tipom Post[]
+-kreiramo i eksportujemo varijablu niz const handlers
+-u nizu handlers pozivamo funkciju http.get()
+-u folderu mocks kreiramo server.ts fajl
+-u server.ts fajl importujemo funkciju setupServer iz paketa msw/node
+-importujemo niz handlers iz handlers.ts fajla
+-pozivamo funkciju setupServer(...handlers)
+-vrijednost funkcije setupServer(...handlers) pohranjujemo u varijablu const server
+-varijablu server eksportujemo kao default
+-u vitest.setup.ts fajl importujemo varijablu server
+-importujemo funkcije beforeAll i afterAll iz paketa vitest
+-pozivamo tri funkcije: beforeAll(), afterAll() i afterEach()
+-u folderu __tests__ kreiramo komponentu App.test.tsx
+-u komponentu App.test.tsx importujemo instancu React iz paketa react
+-importujemo funkcije render, screen i within iz paketa esting-library/react
+-importujemo funkcije describe, test i expect iz paketa vitest
+-importujemo funkciju getFormElements iz komponente Form.test.tsx
+-importujemo niz posts iz mocks/handlers.ts fajla
+-importujemo funkciju userEvent iz biblioteke testing-library/user-event
+-importujemo varijablu server iz server.ts fajla
+-importujemo komponentu App iz komponente App.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je ime testa, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-u anonimnoj funkciji prvi argument je opis testa za renderovanje komponente App, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkcije render() i expect()
+-pozivamo jos jednu funkciju test() sa dva argumenta
+-u anonimnoj funkciji prvi argument je opis testa za dohvacanje objava, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju render() i dvije funkcije expect()
