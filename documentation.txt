@@ -970,3 +970,8 @@ Section 05: Mock Service Worker - Mocking API's
 -pozivamo funkciju expect()
 
 Practice Test 2: Testing with Mock Service Worker
+
+
+Section 06: Search Github Users - Front End
+
+47. Info
