@@ -975,3 +975,9 @@ Practice Test 2: Testing with Mock Service Worker
 Section 06: Search Github Users - Front End
 
 47. Info
+
+48. Install
+-kreiramo folder 05-search-github-users
+-u folder 05-search-github-users dodajemo starter foldere i fajlove iz foldera 01-starter
+-u terminalu udemo u folder sa komandom cd 05-search-github-users
+-u terminalu ukucamo komandu npm i da instaliramo potrebne pakete za projekt
