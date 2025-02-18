@@ -981,3 +981,8 @@ Section 06: Search Github Users - Front End
 -u folder 05-search-github-users dodajemo starter foldere i fajlove iz foldera 01-starter
 -u terminalu udemo u folder sa komandom cd 05-search-github-users
 -u terminalu ukucamo komandu npm i da instaliramo potrebne pakete za projekt
+
+49. Tailwind CSS and Shadcn UI
+-u terminalu instaliramo pakette Tailwind CSS i Shadcn UI
+-otvorimo web stranicu: https://tailwindcss.com/
+-otvorimo web stranicu: https://ui.shadcn.com/
