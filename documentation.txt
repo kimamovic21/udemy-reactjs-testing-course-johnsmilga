@@ -968,3 +968,5 @@ Section 05: Mock Service Worker - Mocking API's
 -vrijednost funkcije within() pohranjujemo u varijablu const deleteBtn
 -pozivamo funkciju await user.click()
 -pozivamo funkciju expect()
+
+Practice Test 2: Testing with Mock Service Worker
