@@ -225,11 +225,10 @@ export default App;
 ## Search Form
 
 ```tsx
+import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { type FormEvent } from 'react';
-import { useState } from 'react';
 
 type SearchFormProps = {
   userName: string;

@@ -1005,3 +1005,23 @@ Section 06: Search Github Users - Front End
 -u main element dodajemo komponente SearchForm i UserProfile
 -komponenti SearchForm dodajemo prop userName i setUserName
 -komponenti UserProfile dodajemo prop userName
+
+51. Search Form
+-otvorimo link: https://ui.shadcn.com/docs/components/toast
+-u terminalu instaliramo paket toast sa komandom: npx shadcn@latest add toast
+-u komponentu SearchForm.tsx importujemo funkciju useState i tip FormEvent iz paketa React
+-importujemo komponente Button, Input i Label iz foldera components/ui
+-u funkciji SearchForm() kreiramo state varijablu const text i set funkciju setText
+-kreiramo funkciju handleSearch() sa parametrom e
+-parametru e dodajemo tip FormEvent<HTMLFormElement>
+-u funkciji handleSearch() pozivamo funkciju e.preventDefault()
+-dodajemo uslov if (text === '')
+-pozivamo funkciju setUserName(text)
+-u jsx-u kreiramo form element kao roditelj element
+-form elementu dodajemo prop className i dogadaj onSubmit
+-u dogadaj onSubmit proslijedujemo funkciju handleSearch
+-u form element dodajemo komponente Label, Input i Button
+-u komponentu SearchForm.tsx importujemo funkciju useToast iz hooks/use-toast.ts fajla
+-u funkciji SearchForm() pozivamo funkciju useToast()
+-vrijednost funkcije useToast() pohranjujemo u destruktuiranu varijablu const { toast }
+-u uslovu if pozivamo funkciju toast() sa argumentom objekt
