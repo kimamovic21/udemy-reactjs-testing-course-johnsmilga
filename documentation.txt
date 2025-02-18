@@ -1025,3 +1025,8 @@ Section 06: Search Github Users - Front End
 -u funkciji SearchForm() pozivamo funkciju useToast()
 -vrijednost funkcije useToast() pohranjujemo u destruktuiranu varijablu const { toast }
 -u uslovu if pozivamo funkciju toast() sa argumentom objekt
+-u komponentu main.tsx importujemo komponentu Toaster iz komponente components/ui/toaster.tsx
+
+52. GraphQL
+-otvorimo web stranicu: https://graphql.org
+-otvorimo link: https://studio.apollographql.com/public/countries/variant/current/home

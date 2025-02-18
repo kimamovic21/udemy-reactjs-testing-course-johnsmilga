@@ -316,7 +316,9 @@ export default SearchForm;
 
 ## Graphql
 
-GraphQL is a modern query language and runtime for APIs that allows clients to request specific data they need and nothing more. Unlike traditional REST APIs where you get fixed data from multiple endpoints, GraphQL provides a single endpoint where you can specify exactly what data you want to receive.
+- GraphQL is a modern query language and runtime for APIs that allows clients to request specific data they need and nothing more. 
+- Unlike traditional REST APIs where you get fixed data from multiple endpoints, GraphQL provides a single endpoint where you can 
+  specify exactly what data you want to receive.
 
 - **Schema**: The blueprint that defines all available data types and operations in your API
 - **Query**: A request to read or fetch data (similar to GET in REST)
