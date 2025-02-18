@@ -986,3 +986,22 @@ Section 06: Search Github Users - Front End
 -u terminalu instaliramo pakette Tailwind CSS i Shadcn UI
 -otvorimo web stranicu: https://tailwindcss.com/
 -otvorimo web stranicu: https://ui.shadcn.com/
+
+50. Structure
+-u eslint.config.js fajl dodajemo opciju: '@typescript-eslint/no-unused-vars': 'warn'
+-u komponentu App.tsx importujemo funkciju useState iz paketa React
+-kreiramo state varijablu const userName i set funkciju setUserName
+-u folderu components kreiramo foldere form i user
+-u folderu user kreiramo komponentu SearchForm.tsx
+-u komponenti SearchForm.tsx kreiramo tip SearchFormProps
+-funkciji SearchForm() dodajemo parametre destruktuirane prop userName i setUserName
+-parametrima dodajemo tip SearchFormProps
+-u folderu user kreiramo komponentu UserProfile.tsx
+-u komponenti UserProfile.tsx kreiramo tip UserProfileProps
+-funkciji UserProfile() dodajemo parametar destruktuirani prop userName
+-parametru userName dodajemo tip UserProfileProps
+-u komponentu App.tsx importujemo komponente SearchForm.tsx i UserProfile.tsx
+-u jsx-u kreiramo roditelj main element sa Tailwind CSS klasama
+-u main element dodajemo komponente SearchForm i UserProfile
+-komponenti SearchForm dodajemo prop userName i setUserName
+-komponenti UserProfile dodajemo prop userName
