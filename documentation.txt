@@ -1059,3 +1059,19 @@ Section 06: Search Github Users - Front End
 -u funkciju render() dodajemo komponentu ApolloProvider kao roditelj element
 -komponenti ApolloProvider dodajemo prop client
 -u prop client proslijedujemo vrijednost varijable client
+
+54. Query
+-u folderu src kreiramo queries.ts fajl
+-u queries.ts fajl importujemo varijablu gql iz paketa apollo/client
+-kreiramo i eksportujemo varijablu GET_USER
+-u folderu src kreiramo types.ts fajl
+-u types.ts fajlu kreiramo i eksportujemo tipove LanguageEdge, Repository, User i UserData
+-u komponentu UserProfile.tsx importujemo funkciju useQuery iz paketa apollo/client
+-importujemo tip UserData iz types.ts fajla
+-importujemo varijablu GET_USER iz queries.ts fajla
+-u funkciji UserProfile() pozivamo funkciju useQuery<UserData>()
+-vrijednost funkcije useQuery() pohranjujemo u destruktuirane varijable const { loading, error, data }
+-dodajemo tri uslova if (loading), if (error) i if (!data)
+-iz varijable data.user destruktuiramo vise varijabli
+-u jsx-u kreiramo roditelj div element
+-u div element dodajemo h2 element i kreiramo h3 element
