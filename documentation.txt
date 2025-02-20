@@ -1075,3 +1075,38 @@ Section 06: Search Github Users - Front End
 -iz varijable data.user destruktuiramo vise varijabli
 -u jsx-u kreiramo roditelj div element
 -u div element dodajemo h2 element i kreiramo h3 element
+
+55. User Profile, Card and Stats Container Components
+-u folderu components/user kreiramo komponentu UserCard.tsx
+-u komponentu UserCard.tsx importujemo komponentu Button iz komponente ui/button.tsx
+-importujemo komponente Card, CardTitle, CardDescription i CardHeader iz komponente ui/card.tsx
+-kreiramo tip UserCardProps
+-funkciji UserCard() dodajemo parametre destruktuirane prop avatarUrl, name, bio i url
+-parametrima dodajemo tip UserCard
+-u jsx-u dodajemo komponentu Card sa prop className kao roditelj element
+-u komponentu Card dodajemo komponentu CardHeader sa otvorenim i zatvorenim tagom
+-komponenti CardHeader dodajemo Tailwind CSS flex klase
+-u komponenti CardHeader kreiramo img element sa atributima src, alt i className
+-kreiramo div element sa Tailwind CSS flex klasama
+-u div element dodajemo komponente CardTitle, CardDescription i Button sa otvorenim i zatvorenim tagom
+-komponenti Button dodajemo prop asChild, size i className
+-u komponenti Button kreiramo a element sa atributima href, target i rel
+-u komponentu UserProfile.tsx importujemo komponentu UserCard.tsx
+-u jsx-u, u div element dodajemo komponentu UserCard sa prop avatarUrl, name, bio i url
+-u folderu components/user kreiramo komponentu StatsCard.tsx
+-u komponentu StatsCard.tsx importujemo komponente Card, CardTitle i CardDescription iz komponente ui/card.tsx
+-kreiramo tip StatsCardProps
+-funkciji StatsCard() dodajemo parametre destruktuirane prop title, count 
+-parametrima dodajemo tip StatsCardProps
+-u jsx-u dodajemo komponentu Card kao roditelj element
+-u Card elementu kreiramo div elemenata sa Tailwind CSS flex klasama
+-u div element dodajemo komponente CardTitle i CardDescription sa otvorenim i zatvorenim tagom
+-u folderu components/user kreiramo komponentu StatsContainer.tsx
+-u komponentu StatsContainer.tsx importujemo komponentu StatsCard iz komponente StatsCard.tsx
+-kreiramo tip StatsContainerProps
+-funkciji StatsContainer() dodajemo parametar prop sa tipom StatsContainerProps
+-u funkciji StatsContainer() destruktuiramo cetiri varijable iz varijable props
+-u jsx-u kreiramo div element sa Tailwind CSS Grid klasama
+-u div element dodajemo cetiri komponente StatsCard sa prop title i count
+-u komponentu UserProfile.tsx importujemo komponentu StatsContainer iz komponente StatsContainer.tsx
+-u jsx-u, u div element dodajemo komponentu StatsContainer sa prop totalRepos, followers, following i gists

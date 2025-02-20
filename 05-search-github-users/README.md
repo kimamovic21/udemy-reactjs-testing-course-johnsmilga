@@ -648,7 +648,7 @@ type StatsCardProps = {
   count: number;
 };
 
-function StatsCard({ title, count }: StatsCardProps) {
+const StatsCard = ({ title, count }: StatsCardProps) => {
   return (
     <Card>
       <div className='flex flex-row justify-between items-center p-6'>
@@ -657,7 +657,7 @@ function StatsCard({ title, count }: StatsCardProps) {
       </div>
     </Card>
   );
-}
+};
 
 export default StatsCard;
 ```

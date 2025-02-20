@@ -1,6 +1,8 @@
 import { useQuery } from '@apollo/client';
 import { type UserData } from '@/types';
 import { GET_USER } from '@/queries';
+import UserCard from './UserCard';
+import StatsContainer from './StatsContainer';
 
 type UserProfileProps = {
   userName: string;
@@ -14,7 +16,6 @@ const UserProfile = ({ userName }: UserProfileProps) => {
   if (loading) return <div>Loading...</div>;
   if (error) return <h2 className='text-xl'>{error.message}</h2>;
   if (!data) return <h2 className='text-xl'>User Not Found.</h2>;
-  console.log(data);
   
   const {
     avatarUrl,
@@ -29,12 +30,18 @@ const UserProfile = ({ userName }: UserProfileProps) => {
 
   return (
     <div>
-      <h2 className='text-2xl font-bold'>
-        {name}
-      </h2>
-      <h3>
-        {bio}
-      </h3>
+      <UserCard 
+        avatarUrl={avatarUrl} 
+        name={name} 
+        bio={bio} 
+        url={url} 
+      />
+      <StatsContainer
+        totalRepos={repositories.totalCount}
+        followers={followers.totalCount}
+        following={following.totalCount}
+        gists={gists.totalCount}
+      />
     </div>
   );
 };
