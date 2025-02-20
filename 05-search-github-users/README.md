@@ -354,7 +354,10 @@ VITE_GITHUB_TOKEN=YOUR_TOKEN_HERE
 
 ## Apollo Client
 
-Apollo Client is a comprehensive state management library for JavaScript applications that helps you manage both local and remote data with GraphQL. It makes it easy to fetch, cache, and modify application data while automatically handling important concerns like tracking loading and error states. The library integrates especially well with React applications and provides features like automatic caching, optimistic UI updates, and error handling out of the box.
+- Apollo Client is a comprehensive state management library for JavaScript applications that helps you manage both local and remote data with GraphQL. 
+- It makes it easy to fetch, cache, and modify application data while automatically handling important concerns like tracking loading and error states. 
+- The library integrates especially well with React applications and provides features like automatic caching, optimistic UI updates, and error handling 
+  out of the box.
 
 [Apollo Client](https://www.apollographql.com/docs/react/get-started/)
 

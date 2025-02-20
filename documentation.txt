@@ -1030,3 +1030,32 @@ Section 06: Search Github Users - Front End
 52. GraphQL
 -otvorimo web stranicu: https://graphql.org
 -otvorimo link: https://studio.apollographql.com/public/countries/variant/current/home
+
+53. Apollo Client
+-otvorimo link: https://github.com/settings/tokens
+-na Github-u generisemo novi token sa imenom Dev Token
+-kreiramo fajlove .env.local i .env.local.example
+-u .env.local fajl dodajemo varijablu VITE_GITHUB_TOKEN
+-u .env.local.example fajl dodajemo primjer varijable koju je potrebno kreirati
+-otvorimo link: https://www.apollographql.com/docs/react/get-started/
+-otvorimo link: https://www.npmjs.com/package/@apollo/client
+-u terminalu ukucamo komandu: npm install @apollo/client graphql
+-u folderu src kreiramo apolloClient.ts fajl
+-u apolloClient.ts fajl importujemo funkcije HttpLink, ApolloLink, ApolloClient i InMemoryCache iz paketa apollo/client
+-importujemo funkciju onError iz paketa apollo/client/link/error
+-kreiramo varijablu const GITHUB_GRAPHQL_API
+-pozivamo funkciju onError()
+-funkciji onError() dodajemo destruktuirane parametre graphQLErrors i networkError
+-u funkciju onError() dodajemo uslove if (graphQLErrors) i if (networkError)
+-pozivamo funkciju new HttpLink()
+-vrijednost funkcije new HttpLink() pohranjujemo u varijablu const httpLink 
+-pozivamo funkciju ApolloLink.from()
+-vrijednost funkcije ApolloLink.from() pohranjujemo u varijablu const link
+-pozivamo funkciju new ApolloClient()
+-vrijednost funkcije new ApolloClient() pohranjujemo u varijablu const client
+-varijablu client eksportujemo kao default
+-u komponentu main.tsx importujemo komponentu ApolloProvider iz paketa apollo/client
+-importujemo varijablu client iz apolloClient.ts fajla
+-u funkciju render() dodajemo komponentu ApolloProvider kao roditelj element
+-komponenti ApolloProvider dodajemo prop client
+-u prop client proslijedujemo vrijednost varijable client
