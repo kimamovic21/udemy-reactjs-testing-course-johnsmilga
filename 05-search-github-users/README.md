@@ -707,7 +707,8 @@ return (
 
 ## Util Functions
 
-And once we are done with the Stats container, we can start working on the charts, but since charts will need very specific data, first we will need to create some util functions to help us generate such data.
+- And once we are done with the Stats container, we can start working on the charts, but since charts will need very specific data, 
+  first we will need to create some util functions to help us generate such data.
 
 src/utils.ts
 
@@ -725,7 +726,7 @@ export const calculateMostForkedRepos = (
 ): { repo: string; count: number }[] => {
   if (repositories.length === 0) {
     return [];
-  }
+  };
 
   // Transform repository data into simplified objects containing only name and fork count
   const forkedRepos = repositories

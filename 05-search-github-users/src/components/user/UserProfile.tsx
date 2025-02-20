@@ -3,6 +3,7 @@ import { type UserData } from '@/types';
 import { GET_USER } from '@/queries';
 import UserCard from './UserCard';
 import StatsContainer from './StatsContainer';
+import ForkedRepos from '../charts/ForkedRepos';
 
 type UserProfileProps = {
   userName: string;
@@ -42,6 +43,11 @@ const UserProfile = ({ userName }: UserProfileProps) => {
         following={following.totalCount}
         gists={gists.totalCount}
       />
+      {repositories.totalCount > 0 && (
+        <div className='grid md:grid-cols-2 gap-4'>
+          <ForkedRepos repositories={repositories.nodes} />
+        </div>
+      )}
     </div>
   );
 };

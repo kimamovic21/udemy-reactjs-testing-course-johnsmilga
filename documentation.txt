@@ -1110,3 +1110,24 @@ Section 06: Search Github Users - Front End
 -u div element dodajemo cetiri komponente StatsCard sa prop title i count
 -u komponentu UserProfile.tsx importujemo komponentu StatsContainer iz komponente StatsContainer.tsx
 -u jsx-u, u div element dodajemo komponentu StatsContainer sa prop totalRepos, followers, following i gists
+
+56. Most Forked Repos
+-kreiramo utils.ts fajl
+-u utils.ts fajl importujemo tip Repository iz types.ts fajla
+-kreiramo i eksportujemo funkciju calculateMostForkedRepos()
+-funkciji calculateMostForkedRepos() dodajemo parametar repositories sa tipom Repository[]
+-funkciji calculateMostForkedRepos() dodajemo tip
+-u funkciju calculateMostForkedRepos() dodajemo uslov if (repositories.length === 0)
+-kreiramo varijablu const forkedRepos
+-dodajemo izjavu return forkedRepos
+-u folderu components kreiramo folder charts
+-u folderu components/charts kreiramo komponentu ForkedRepos.tsx
+-u komponentu ForkedRepos.tsx importujemo tip Repository iz types.ts fajla
+-importujemo funkciju calculateMostForkedRepos iz utils.ts fajla
+-funkciji ForkedRepos() dodajemo parametar destruktuirani prop repositories sa tipom Repository[] 
+-u funkciji ForkedRepos() pozivamo funkciju calculateMostForkedRepos(repositories)
+-vrijednost funkcije calculateMostForkedRepos(repositories) pohranjujemo u varijablu const mostForkedRepos
+-u komponentu UserProfile.tsx importujemo komponentu ForkedRepos.tsx
+-u jsx-u dodajemo uslov za kondicionalno renderovanje repositories.totalCount > 0
+-u uslovu za kondicionalno renderovanje kreiramo div element sa Tailwind CSS Grid klasama
+-u div element dodajemo komponentu ForkedRepos sa prop repositories
