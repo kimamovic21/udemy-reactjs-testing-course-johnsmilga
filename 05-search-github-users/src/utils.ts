@@ -35,3 +35,36 @@ export const calculateMostStarredRepos = (
 
   return starredRepos;
 };
+
+export const calculatePopularLanguages = (
+  repositories: Repository[]
+): { language: string; count: number }[] => {
+  if (repositories.length === 0) {
+    return [];
+  };
+
+  const languageMap: { [key: string]: number } = {};
+
+  repositories.forEach((repo) => {
+    if (repo.languages.edges.length === 0) {
+      return;
+    };
+
+    repo.languages.edges.forEach((language) => {
+      const { name } = language.node;
+      languageMap[name] = (languageMap[name] || 0) + 1;
+    });
+  });
+
+  if (Object.keys(languageMap).length === 0) {
+    return [];
+  };
+
+  return (
+    Object
+      .entries(languageMap)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 5)
+      .map(([language, count]) => ({ language, count }))
+  );
+};

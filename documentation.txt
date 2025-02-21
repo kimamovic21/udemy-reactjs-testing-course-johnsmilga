@@ -1147,3 +1147,19 @@ Section 06: Search Github Users - Front End
 -vrijednost funkcije calculateMostStarredRepos(repositories) pohranjujemo u varijablu const popularRepos
 -u komponentu UserProfile.tsx importujemo komponentu PopularRepos iz komponente PopularRepos.tsx
 -u jsxu-u, u div element sa Tailwind CSS Grid klasama dodajemo komponentu PopularRepos sa prop repositories
+
+58. Most Used Languages
+-u utils.ts fajlu kreiramo i eksportujemo funkciju calculatePopularLanguages()
+-funkciji calculatePopularLanguages() dodajemo parametar repositories sa tipom Repository[]
+-u funkciju calculatePopularLanguages() dodajemo uslov if (repositories.length === 0)
+-u uslov if dodajemo izjavu return []
+-kreiramo varijablu const languageMap
+-pozivamo funkciju repositories.forEach()
+-dodajemo uslov if (Object.keys(languageMap).length === 0)
+-dodajemo izjavu return Object.entries(languageMap)
+-u folderu components/charts kreiramo komponentu UsedLanguages.tsx
+-u komponentu UsedLanguages.tsx importujemo tip Repository iz types.ts fajla
+-importujemo funkciju calculatePopularLanguages iz utils.ts fajla
+-funkciji UsedLanguages() dodajemo parametar destruktuirani prop repositories sa tipom Repository[]
+-u funkciji UsedLanguages() pozivamo funkciju calculatePopularLanguages(repositories)
+-vrijednost funkcije calculatePopularLanguages(repositories) pohranjujemo u varijablu const popularLanguages
