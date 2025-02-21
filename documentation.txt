@@ -1131,3 +1131,19 @@ Section 06: Search Github Users - Front End
 -u jsx-u dodajemo uslov za kondicionalno renderovanje repositories.totalCount > 0
 -u uslovu za kondicionalno renderovanje kreiramo div element sa Tailwind CSS Grid klasama
 -u div element dodajemo komponentu ForkedRepos sa prop repositories
+
+57. Most Popular Repos
+-u utils.ts fajlu kreiramo i eksportujemo funkciju calculateMostStarredRepos
+-funkcija calculateMostStarredRepos() dodajemo parametar repositories sa tipom Repository
+-u funkciju calculateMostStarredRepos() dodajemo uslov if (repositories.length === 0)
+-kreiramo varijablu const starredRepos
+-dodajemo izjavu return starredRepos
+-u folderu components/charts kreiramo komponentu PopularRepos.tsx
+-u komponentu PopularRepos.tsx importujemo tip Repository iz types.ts fajla
+-importujemo funkciju calculateMostStarredRepos iz utils.ts fajla
+-funkciji PopularRepos() dodajemo parametar destruktuirani prop repositories
+-parametru repositories dodajemo tip Repository[]
+-u funkciji PopularRepos() pozivamo funkciju calculateMostStarredRepos(repositories)
+-vrijednost funkcije calculateMostStarredRepos(repositories) pohranjujemo u varijablu const popularRepos
+-u komponentu UserProfile.tsx importujemo komponentu PopularRepos iz komponente PopularRepos.tsx
+-u jsxu-u, u div element sa Tailwind CSS Grid klasama dodajemo komponentu PopularRepos sa prop repositories
