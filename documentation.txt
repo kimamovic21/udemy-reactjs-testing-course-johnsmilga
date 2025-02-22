@@ -1187,3 +1187,12 @@ Section 06: Search Github Users - Front End
 -dodajemo komponentu Bar sa samozatvarajucim tagom
 -komponenti Bar dodajemo prop dataKey, fill i radius
 -ponovimo slican postupak za komponente PopularRepos.tsx i ForkedRepos.tsx
+
+60. Loading Component
+-u folderu components/user kreiramo komponentu Loading.tsx
+-u komponentu Loading.tsx importujemo komponentu Skeleton iz komponente ui/skeleton.tsx
+-u jsx-u, u div roditelj element dodajemo komponentu Skeleton sa prop className
+-u roditelj div elementu kreiramo div element sa Tailwind CSS Grid klasama
+-u div elemenata dodajemo cetiri komponente Skeleton sa prop className
+-u komponentu UserProfile.tsx importujemo komponentu Loading.tsx
+-u uslov if (loading) dodajemo komponentu Loading
