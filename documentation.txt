@@ -1163,3 +1163,27 @@ Section 06: Search Github Users - Front End
 -funkciji UsedLanguages() dodajemo parametar destruktuirani prop repositories sa tipom Repository[]
 -u funkciji UsedLanguages() pozivamo funkciju calculatePopularLanguages(repositories)
 -vrijednost funkcije calculatePopularLanguages(repositories) pohranjujemo u varijablu const popularLanguages
+
+59. Charts
+-otvorimo link: https://www.npmjs.com/package/recharts
+-u terminalu instaliramo Recharts paket sa komandom npm i recharts
+-otvorimo link: https://ui.shadcn.com/docs/components/chart
+-u terminalu instaliramo komponentu chart.tsx sa komandom: npx shadcn@latest add chart
+-u komponentu UsedLanguages.tsx importujemo tip ChartConfig, komponente ChartContainer, ChartTooltip i ChartTooltipContent iz komponente ui/chart.tsx
+-importujemo komponente Bar, BarChart, CartesianGrid, XAxis i YAxis iz paketa recharts
+-u funkciji UsedLanguages() kreiramo varijablu objekt const chartConfig
+-objektu chartConfig dodajemo tip satisfies ChartConfig
+-u jsx-u, u div elementu kreiramo h2 element sa Tailwind CSS klasama
+-u roditelj div element dodajemo komponentu ChartContainer sa otvorenim i zatvorenim tagom
+-komponenti ChartContainer dodajemo prop config i className
+-u komponentu ChartContainer dodajemo komponentu BarChart sa otvorenim i zatvorenim tagom
+-u komponentu BarChart dodajemo komponentu CartesianGrid sa samozatvarajucim tagom
+-komponenti CartesianGrid dodajemo prop vertical
+-dodajemo komponentu XAxis sa samozatvarajucim tagom
+-komponenti XAxis dodajemo prop dataKey, tickLine i tickMargin
+-dodajemo komponentu ChartTooltip sa samozatvarajucim tagom
+-komponenti ChartTooltip dodajemo prop content
+-u prop content proslijedujemo komponentu ChartTooltipContent sa samozatvarajucim tagom
+-dodajemo komponentu Bar sa samozatvarajucim tagom
+-komponenti Bar dodajemo prop dataKey, fill i radius
+-ponovimo slican postupak za komponente PopularRepos.tsx i ForkedRepos.tsx
