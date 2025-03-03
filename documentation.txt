@@ -1245,3 +1245,12 @@ Section 07: Search Github Users - Tests
 -u funkciji describe() prvi argument je opis za racunanje ukupnog broja repozitorija sa najvice zvjezdica, dok je drugi argument anonimna funkcija
 -u anonimnoj funkciji pozivamo tri funkcije test()
 -ponovimo slican postupak kao u prosloj funkciji describe()
+
+64. Test - calculateMostForkedRepos Function
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis za racunanje popularnih jezika, dok je drugi argument anonimna funkcija
+-ponovimo slican postupak kao u prosloj funkciji describe()
+-
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis za racunanje statistike u repozitorijima
+-u anonimnoj funkciji pozivamo prethodno kreirane tri funkcije describe()
