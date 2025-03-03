@@ -1254,3 +1254,13 @@ Section 07: Search Github Users - Tests
 -pozivamo funkciju describe() sa dva argumenta
 -u funkciji describe() prvi argument je opis za racunanje statistike u repozitorijima
 -u anonimnoj funkciji pozivamo prethodno kreirane tri funkcije describe()
+
+65. StatsCard Component Test
+-u folderu __tests__ kreiramo komponentu StatsCard.test.tsx
+-u komponentu StatsCard.test.tsx importujemo paket @testing-library/jest-dom
+-importujemo funkcije render i screen iz paketa @testing-library/react
+-importujemo funkcije describe, expect i test iz paketa vitest
+-importujemo komponentu StatsCard iz komponente user/StatsCard.tsx
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis testa StatsCard, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo tri funkcije test()
