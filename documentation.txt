@@ -1239,3 +1239,9 @@ Section 07: Search Github Users - Tests
 -pozivamo funkciju calculateMostForkedRepos(mockRepositories)
 -vrijednost funkcije calculateMostForkedRepos() pohranjujemo u varijablu const result
 -pozivamo funkcije expect(result[0].count) i expect(result[1].count)
+
+63. Test - calculateMostStarredRepos Function
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis za racunanje ukupnog broja repozitorija sa najvice zvjezdica, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo tri funkcije test()
+-ponovimo slican postupak kao u prosloj funkciji describe()
