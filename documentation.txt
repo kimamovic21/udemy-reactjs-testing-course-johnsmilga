@@ -1264,3 +1264,8 @@ Section 07: Search Github Users - Tests
 -pozivamo funkciju describe() sa dva argumenta
 -u funkciji describe() prvi argument je opis testa StatsCard, dok je drugi argument anonimna funkcija
 -u anonimnoj funkciji pozivamo tri funkcije test()
+
+66. StatsContainer Component Test
+-u folderu __tests__ kreiramo komponentu StatsContainer.test.tsx
+-u komponentu StatsContainer.test.tsx importujemo komponentu StatsContainer.tsx iz komponente user/StatsContainer.tsx
+-ponovimo slican postupak kao u komponenti StatsCard.test.tsx
