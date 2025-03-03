@@ -1196,3 +1196,18 @@ Section 06: Search Github Users - Front End
 -u div elemenata dodajemo cetiri komponente Skeleton sa prop className
 -u komponentu UserProfile.tsx importujemo komponentu Loading.tsx
 -u uslov if (loading) dodajemo komponentu Loading
+
+
+Section 07: Search Github Users - Tests
+
+61. Setup Info
+-otvorimo link: https://www.npmjs.com/package/msw
+-u terminalu instaliramo paket msw sa komandom npm i msw
+-u folderu src kreiramo folder mocks i fajlove handlers.ts i server.ts
+-u folderu src kreiramo vitest.setup.ts fajl
+-otvorimo link: https://vitest.dev/
+-u terminalu instaliramo paket vitest sa komandom npm install -D vitest
+-otvorimo link: https://testing-library.com/
+-u terminalu instaliramo pakete sa komandom npm install --save-dev @testing-library/react @testing-library/dom @types/react @types/react-dom
+-otvorimo link: https://www.npmjs.com/package/@testing-library/jest-dom
+-u terminalu instaliramo paket jest-dom sa komandom npm i --save-dev @testing-library/jest-dom
