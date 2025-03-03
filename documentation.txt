@@ -1267,5 +1267,10 @@ Section 07: Search Github Users - Tests
 
 66. StatsContainer Component Test
 -u folderu __tests__ kreiramo komponentu StatsContainer.test.tsx
--u komponentu StatsContainer.test.tsx importujemo komponentu StatsContainer.tsx iz komponente user/StatsContainer.tsx
+-u komponentu StatsContainer.test.tsx importujemo komponentu StatsContainer iz komponente user/StatsContainer.tsx
 -ponovimo slican postupak kao u komponenti StatsCard.test.tsx
+
+67. UserCard Component Test
+-u folderu __tests__ kreiramo komponentu UserCard.test.tsx
+-u komponentu UserCard.test.tsx importujemo komponentu UserCard iz komponente user/UserCard.tsx
+-ponovimo slican postupak kao u komponenti StatsContainer.test.tsx
