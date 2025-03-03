@@ -1211,3 +1211,31 @@ Section 07: Search Github Users - Tests
 -u terminalu instaliramo pakete sa komandom npm install --save-dev @testing-library/react @testing-library/dom @types/react @types/react-dom
 -otvorimo link: https://www.npmjs.com/package/@testing-library/jest-dom
 -u terminalu instaliramo paket jest-dom sa komandom npm i --save-dev @testing-library/jest-dom
+
+62. Test - calculateMostForkedRepos Function
+-otvorimo link: https://www.npmjs.com/package/jsdom
+-u terminalu instaliramo paket jsdom sa komandom jsdom
+-u package.json fajl dodajemo komandu: "test": "vitest"
+-u folderu src kreiramo folder __tests__ i utils.test.ts fajl
+-u terminalu ukucamo komandu npm test
+-u utils.test.ts fajl importujemo tip Repository iz types.ts fajla
+-importujemo funkcije calculateMostForkedRepos, calculateMostStarredRepo i calculatePopularLanguages iz src/utils.ts fajla
+-kreiramo i eksportujemo niz mockRepositories sa tipom Repository[]
+-importujemo funkcije describe, test i expect iz paketa vitest
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je opis za racunanje ukupnog broj forked repos, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je naziv testa za vracanje praznog niz za prazan input
+-pozivamo funkciju calculateMostForkedRepos([])
+-vrijednost funkcije calculateMostForkedRepos([]) pohranjujemo u varijablu const result
+-pozivamo funkciju expect(result).toEqual()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je naziv testa za vracanje top 5 forked repos, dok je drugi argument anonimna funkcija
+-pozivamo funkciju calculateMostForkedRepos(mockRepositories)
+-vrijednost funkcije calculateMostForkedRepos() pohranjujemo u varijablu const result
+-pozivamo funkciju expect(result).toEqual({ ... })
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je naziv testa za sortiranje forked repos po silaznom redu, dok je drugi argument anonimna funkcija
+-pozivamo funkciju calculateMostForkedRepos(mockRepositories)
+-vrijednost funkcije calculateMostForkedRepos() pohranjujemo u varijablu const result
+-pozivamo funkcije expect(result[0].count) i expect(result[1].count)
