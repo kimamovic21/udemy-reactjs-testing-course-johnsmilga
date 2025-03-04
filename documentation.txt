@@ -1354,3 +1354,16 @@ Section 07: Search Github Users - Tests
 -pozivamo funkciju describe() sa dva argumenta
 -u funkciji describe() prvi argument je ime komponente, dok je drugi argument anonimna funkcija
 -u anonimnoj funkciji pozivamo funkciju beforeEach() i dvije funkcije test()
+
+70. Mock GraphQL Response
+-u handlers.ts fajl importujemo funkcije graphql i HttpResponse iz paketa msw
+-importujemo niz mockRepositories iz utils.test.ts fajla
+-u nizu handlers pozivamo funkciju graphql.query()
+-funkciji query() dodajemo dva argumenta
+-u funkciji query() prvi argument je 'GetUser', dok je drugi argument anonimna funkcija ({ query, variables })
+-u anonimnoj funkciji destruktuiramo varijablu const { login } iz parametra variables
+-dodajemo uslov if (login === 'request-error')
+-u uslovu if pozivamo funkciju return HttpResponse.json()
+-dodajemo uslov if (login === 'invalid-username')
+-u uslovu if pozivamo funkciju return HttpResponse.json()
+-nakon uslova if pozivamo funkciju return HttpResponse.json()
