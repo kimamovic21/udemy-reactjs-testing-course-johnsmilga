@@ -983,7 +983,7 @@ Section 06: Search Github Users - Front End
 -u terminalu ukucamo komandu npm i da instaliramo potrebne pakete za projekt
 
 49. Tailwind CSS and Shadcn UI
--u terminalu instaliramo pakette Tailwind CSS i Shadcn UI
+-u terminalu instaliramo pakete Tailwind CSS i Shadcn UI
 -otvorimo web stranicu: https://tailwindcss.com/
 -otvorimo web stranicu: https://ui.shadcn.com/
 
@@ -1274,3 +1274,66 @@ Section 07: Search Github Users - Tests
 -u folderu __tests__ kreiramo komponentu UserCard.test.tsx
 -u komponentu UserCard.test.tsx importujemo komponentu UserCard iz komponente user/UserCard.tsx
 -ponovimo slican postupak kao u komponenti StatsContainer.test.tsx
+
+68. SearchForm Component Test
+-otvorimo link: https://www.npmjs.com/package/@testing-library/user-event
+-u terminalu instaliramo paket user-event sa komandom npm i --save-dev @testing-library/user-event
+-u folderu __tests__ kreiramo komponentu SearchForm.test.tsx
+-u komponentu SearchForm.test.tsx importujemo funkcije render i screen iz paketa @testing-library/react
+-importujemo funkcije describe, expect, test, vi i beforeEach iz paketa vitest
+-importujemo funkciju userEvent iz paketa @testing-library/user-event
+-importujemo komponentu SearchForm iz komponente form/SearchForm.tsx
+-pozivamo funkciju vi.fn()
+-vrijednost funkcije vi.fn() pohranjujemo u varijablu const mockToast
+-pozivamo jos jednu funkciju vi.fn()
+-vrijednost funkcije vi.fn() pohranjujemo u varijablu const setUserNameMock
+-pozivamo funkciju vi.mock()
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je ime komponente, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju userEvent.setup()
+-vrijednost funkcije userEvent.setup() pohranjujemo u varijablu const user
+-pozivamo funkciju beforeEach()
+-kreiramo funkciju getFormElements()
+-u funkciji getFormElements() kreiramo varijable const input i const button
+-dodajemo izjavu objekt return { input, button }
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje forme za pretrazivanje, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render()
+-funkciji render() dodajemo argument komponentu SearchForm sa prop userName i setUserName
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { input, button }
+-pozivamo funkciju expect(input).toHaveValue()
+-pozivamo funkciju expect(button).toBeInTheDocument()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za prikazivanje praznog input polja kada je varijabla userName prazna, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju render()
+-funkciji render() dodajemo argument komponentu SearchForm sa prop userName i setUserName
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuiranu varijablu const { input }
+-pozivamo funkciju expect(input).toHaveValue('')
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za prikazivanje najnovije input vrijednosti, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju render()
+-funkciji render() dodajemo argument komponentu SearchForm sa prop userName i setUserName
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuiranu varijablu const { input }
+-pozivamo funkciju await user.type()
+-pozivamo funkciju expect(input).toHaveValue()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za prikazivanje poruke toast nakon slanja prazne vrijednosti, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju render()
+-funkciji render() dodajemo argument komponentu SearchForm sa prop userName i setUserName
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuiranu varijablu const { button }
+-pozivamo funkciju await user.click(button)
+-pozivamo funkciju expect(mockToast).toHaveBeenCalledWith()
+-pozivamo funkciju expect(setUserNameMock).not.toHaveBeenCalled()
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za pozivanje funkcije setUserName nakon uspjesnog slanja forme, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji pozivamo funkciju render()
+-funkciji render() dodajemo argument komponentu SearchForm sa prop userName i setUserName
+-pozivamo funkciju getFormElements()
+-vrijednost funkcije getFormElements() pohranjujemo u destruktuirane varijable const { input, button }
+-pozivamo funkcije await user.type() i await user.click()
+-pozivamo funkciju expect(setUserNameMock).toHaveBeenCalledWith()
+-pozivamo funkciju expect(mockToast).not.toHaveBeenCalled()
