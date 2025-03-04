@@ -1337,3 +1337,20 @@ Section 07: Search Github Users - Tests
 -pozivamo funkcije await user.type() i await user.click()
 -pozivamo funkciju expect(setUserNameMock).toHaveBeenCalledWith()
 -pozivamo funkciju expect(mockToast).not.toHaveBeenCalled()
+
+69. ForkedRepos Chart Component Test
+-u folderu __tests__ kreiramo komponentu ForkedRepos.test.tsx
+-u komponentu ForkedRepos.test.tsx importujemo funkcije render i screen iz paketa @testing-library/react
+-importujemo funkcije import beforeEach, describe, expect, test i vi iz paketa vitest
+-importujemo niz mockRepositories iz utils.test.ts fajla
+-importujemo komponentu ForkedRepos iz komponente charts/ForkedRepos.tsx
+-pozivamo funkciju vi.mock() sa dva argumenta
+-u funkciji vi.mock() prvi argument je putanja komponente '@/components/ui/chart', dok je drugi argument anonimna funkcija
+-u anonimnu funkciju dodajemo izjavu objekt return
+-u izjavu return dodajemo tri komponente ChartContainer, ChartTooltip i ChartTooltipContent
+-pozivamo funkciju vi.mock() sa dva argumenta
+-u funkciji vi.mock() prvi argument je 'recharts', dok je drugi argument anonimna funkcija
+-u izjavu return dodajemo pet komponenti BarChart, CartesianGrid, XAxis, YAxis i Bar
+-pozivamo funkciju describe() sa dva argumenta
+-u funkciji describe() prvi argument je ime komponente, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju beforeEach() i dvije funkcije test()
