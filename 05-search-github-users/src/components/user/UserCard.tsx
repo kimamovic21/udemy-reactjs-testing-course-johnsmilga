@@ -12,6 +12,7 @@ type UserCardProps = {
   bio: string;
   url: string;
 };
+
 const UserCard = ({ avatarUrl, name, bio, url }: UserCardProps) => {
   return (
     <Card className='w-full lg:w-1/2 mb-8'>
@@ -19,7 +20,7 @@ const UserCard = ({ avatarUrl, name, bio, url }: UserCardProps) => {
         <img
           src={avatarUrl}
           alt={name}
-          className='w-36 h-36  rounded object-cover'
+          className='w-36 h-36 rounded object-cover'
         />
         <div className='flex flex-col gap-y-2'>
           <CardTitle>
@@ -27,7 +28,7 @@ const UserCard = ({ avatarUrl, name, bio, url }: UserCardProps) => {
           </CardTitle>
 
           <CardDescription>
-            {bio || 'Passionate about coding and technology.'}
+            {bio || 'Passionate about coding and technology'}
           </CardDescription>
           
           <Button asChild size='sm' className='w-1/2 mt-2'>

@@ -37,6 +37,6 @@ describe('UserCard', () => {
     render(<UserCard {...propsWithoutNameAndBio} />);
 
     expect(screen.getByText('Coding Addict')).toBeInTheDocument();
-    expect(screen.getByText('Passionate about coding and technology.')).toBeInTheDocument();
+    expect(screen.getByText('Passionate about coding and technology')).toBeInTheDocument();
   });
 });

@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, test, vi, beforeEach } from 'vitest';
 import userEvent from '@testing-library/user-event';

@@ -1367,3 +1367,49 @@ Section 07: Search Github Users - Tests
 -dodajemo uslov if (login === 'invalid-username')
 -u uslovu if pozivamo funkciju return HttpResponse.json()
 -nakon uslova if pozivamo funkciju return HttpResponse.json()
+
+71. UserProfile and App Components Test
+-u folderu __tests__ kreiramo komponentu UserProfile.test.tsx
+-u komponentu UserProfile.test.tsx importujemo funkcije render i screen iz paketa @testing-library/react
+-importujemo funkcije describe, expect, test i vi iz paketa vitest
+-importujemo komponentu ApolloProvider iz paketa @apollo/client
+-importujemo komponentu UserProfile iz komponente user/UserProfile.tsx
+-importujemo varijablu client iz paketa @apollo/client
+-kreiramo funkciju renderUserProfile() sa parametrom userName
+-parametru userName dodajemo tip string
+-u funkciji renderUserProfile() pozivamo funkciju render()
+-u funkciju render() proslijedujemo komponentu ApolloProvider sa prop client
+-pozivamo funkciju describe() sa dva argumenta()
+-u funkciji describe() prvi argument je ime komponente, dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje komponente UserProfile dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji kreiramo varijablu const userName
+-pozivamo funkciju renderUserProfile(userName)
+-pozivamo funkciju expect(await screen.findByText(userName))
+-pozivamo tri funkcije vi.mock()
+-pozivamo funkciju expect(await screen.findByRole('img'))
+-pozivamo funkciju expect(await screen.findByText(/full-stack developer/i))
+-pozivamo funkciju expect(await screen.findByRole('link'))
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje error poruke prilikom slanja zahtjeva, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji kreiramo varijablu const userName
+-pozivamo funkciju await renderUserProfile(userName)
+-pozivamo funkciju expect(await screen.findByText())
+-pozivamo funkciju test() sa dva argumenta
+-u funkciji test() prvi argument je opis testa za renderovanje error poruke ako korisnik nije pronaden, dok je drugi argument anonimna asinhrona funkcija
+-u anonimnoj asinhronoj funkciji kreiramo varijablu const userName
+-pozivamo funkciju await renderUserProfile(userName)
+-pozivamo funkciju expect(await screen.findByText())
+-u folderu __tests__ kreiramo komponentu App.test.tsx
+-u komponentu App.test.tsx importujemo paket @testing-library/jest-dom
+-importujemo funkcije render i screen iz paketa @testing-library/react
+-importujemo funkcije describe, expect, test i vi iz paketa vitest
+-importujemo komponentu ApolloProvider iz paketa @apollo/client
+-importujemo funkciju userEvent iz paketa @testing-library/user-event
+-importujemo varijablu client iz paketa @/apolloClient
+-importujemo komponentu App iz komponente App.tsx
+-pozivamo tri funkcije vi.mock()
+-kreiramo funkciju renderApp()
+-pozivamo funkciju describe() sa dva argumenta
+-prvi argument je opis testa dok je drugi argument anonimna funkcija
+-u anonimnoj funkciji pozivamo tru funkcije test() 

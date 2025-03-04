@@ -1,4 +1,4 @@
-import { type Repository } from './types';
+import { Repository } from './types';
 
 export const calculateMostForkedRepos = (
   repositories: Repository[]
@@ -8,13 +8,14 @@ export const calculateMostForkedRepos = (
   };
 
   const forkedRepos = repositories
-    ?.map((repo) => ({
-      repo: repo.name,
-      count: repo.forkCount,
-    }))
+    ?.map((repo) => {
+      return {
+        repo: repo.name,
+        count: repo.forkCount,
+      };
+    })
     .sort((a, b) => b.count - a.count)
     .slice(0, 5);
-
   return forkedRepos;
 };
 
@@ -26,13 +27,11 @@ export const calculateMostStarredRepos = (
   };
 
   const starredRepos = repositories
-    ?.map((repo) => ({
-      repo: repo.name, 
-      stars: repo.stargazerCount, 
-    }))
+    ?.map((repo) => {
+      return { repo: repo.name, stars: repo.stargazerCount };
+    })
     .sort((a, b) => b.stars - a.stars)
-    .slice(0, 5); 
-
+    .slice(0, 5);
   return starredRepos;
 };
 
@@ -49,7 +48,7 @@ export const calculatePopularLanguages = (
     if (repo.languages.edges.length === 0) {
       return;
     };
-
+    
     repo.languages.edges.forEach((language) => {
       const { name } = language.node;
       languageMap[name] = (languageMap[name] || 0) + 1;
@@ -60,11 +59,8 @@ export const calculatePopularLanguages = (
     return [];
   };
 
-  return (
-    Object
-      .entries(languageMap)
-      .sort(([, a], [, b]) => b - a)
-      .slice(0, 5)
-      .map(([language, count]) => ({ language, count }))
-  );
+  return Object.entries(languageMap)
+    .sort(([, a], [, b]) => b - a)
+    .slice(0, 5)
+    .map(([language, count]) => ({ language, count }));
 };

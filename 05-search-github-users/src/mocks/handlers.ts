@@ -1,5 +1,5 @@
 import { graphql, HttpResponse } from 'msw';
-import { mockRepositories } from '@/__tests__/utils.test';
+import { mockRepositories } from '@/__tests__/utils.test.ts';
 
 export const handlers = [
   graphql.query('GetUser', ({ query, variables }) => {
@@ -12,7 +12,7 @@ export const handlers = [
         errors: [{ message: 'there was an error' }],
       });
     };
-    
+
     if (login === 'invalid-username') {
       return HttpResponse.json({
         data: {
