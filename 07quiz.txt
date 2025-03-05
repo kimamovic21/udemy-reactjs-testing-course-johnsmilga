@@ -1,0 +1,37 @@
+Quiz 7: Testing Fundamentals in React Applications
+
+
+Question 1: 
+What is the primary purpose of beforeEach in a test suite?
+
+Correct answer: 
+To reset the state and mocks before each test case.
+
+
+Question 2: 
+In the following code, what is the purpose of mockResolvedValue?
+const mockFetchData = vi.fn().mockResolvedValue([{ id: 1, name: 'Repo' }]);
+
+Correct answer: 
+To simulate a resolved promise with predefined data.
+
+
+Question 3:
+Why is it important to mock external APIs in integration tests?
+
+Correct answer: 
+To prevent dependence on external services and ensure consistent results.
+
+
+Question 4:
+What is the role of screen.findByText in React Testing Library?
+
+Correct answer: 
+To locate an element asynchronously by its text content.
+
+
+Question 5:
+Why would you use MSW (Mock Service Worker) for testing?
+
+Correct answer: 
+To intercept and mock network requests in a test environment
